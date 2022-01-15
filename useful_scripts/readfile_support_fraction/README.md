@@ -1,0 +1,1 @@
+readfile function which support fractions in text file.
