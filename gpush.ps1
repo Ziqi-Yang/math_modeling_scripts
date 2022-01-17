@@ -1,3 +1,4 @@
 git add -A
-git commit -m "normal"
+$gitMessage = Read-Host "git commit Message"
+git commit -m $gitMessage
 git push
