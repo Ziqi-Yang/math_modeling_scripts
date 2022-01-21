@@ -1,3 +1,3 @@
-# Matlab Scripts
+# Math Modeling Scripts
 
-a collection of awesome matlab scripts.
+a collection of useful scripts for math modeling.
