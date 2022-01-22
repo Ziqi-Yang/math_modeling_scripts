@@ -1,0 +1,12 @@
+DP_LIVE_21012022094327667.csv:
+  dataFileType: time-expand
+  timeColumnName: null
+population_total.csv:
+  dataFileType: time-in-column
+  timeColumnName: olleh
+test.csv:
+  dataFileType: time-expand
+  timeColumnName: null
+总生育率-女性.csv:
+  dataFileType: time-expand
+  timeColumnName: null

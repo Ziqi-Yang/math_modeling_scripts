@@ -1,2 +1,5 @@
 pandas
 rich
+pyyaml
+matplotlib
+seaborn
