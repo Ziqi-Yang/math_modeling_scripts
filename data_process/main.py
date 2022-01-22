@@ -1,5 +1,6 @@
 from collections.abc import Iterable
 from compileall import compile_file
+from distutils.command.config import config
 import pandas as pd
 import pickle
 import sys
@@ -31,4 +32,4 @@ console.clear()
 console.rule(f"[bold red]Attribution Viewer[/]")
 console.print(dataFilesAttrs)
 
-Confirm.ask("Has [bold red]problems[/] in the Attributions?")
+hasProb = Confirm.ask("Has [bold red]problems[/] in the Attributions?")
