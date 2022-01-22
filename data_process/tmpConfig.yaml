@@ -1,12 +1,20 @@
-DP_LIVE_21012022094327667.csv:
+complex.csv:
+  countryColumnName: LOCATION
+  dataFileType: complex
+  subjectColumnName: asd
+  timeColumnName: asd
+time-expand-0.csv:
+  countryColumnName: country
   dataFileType: time-expand
+  subjectColumnName: null
   timeColumnName: null
-population_total.csv:
+time-expand-1.csv:
+  countryColumnName: Country Code
+  dataFileType: time-expand
+  subjectColumnName: null
+  timeColumnName: null
+time-in-column.csv:
+  countryColumnName: LOCATION
   dataFileType: time-in-column
-  timeColumnName: olleh
-test.csv:
-  dataFileType: time-expand
-  timeColumnName: null
-总生育率-女性.csv:
-  dataFileType: time-expand
-  timeColumnName: null
+  subjectColumnName: null
+  timeColumnName: asd
