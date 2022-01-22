@@ -16,7 +16,7 @@
 `time-in-column`:
 ![time-in-column](demo/timeInColumn.png)
 
-- `timeColumn`: `$columnName`
+- `timeColumnName`: `$columnName`
 根据`dataFileType`设置此属性为不同的值:
     - `time-expand`: `None` (直接回车即可,不要打`None`)
     - `time-in-column`: `$columnName` (ps: 如果列名有重复，请按参考以下: `a`,`a.1`,`a.2`)

@@ -24,7 +24,7 @@ console.print("Please set suitable attribution for each data file:")
 dataFilesAttrs = {dataFileName: dict() for dataFileName in dataFilesNames}
 attrsChoice = {
     "dataFileType": ["time-expand", "time-in-column"],
-    "timeColumnName": None,
+    "timeColumn": None,
 }  # single stands for no limit, but default is the word
 
 index = 0
@@ -40,18 +40,13 @@ while index < len(dataFilesNames):
             else attrsChoice[attr],
             choices=attrsChoice[attr] if isinstance(attrsChoice[attr], list) else None,
         )
-
-    if (
-        dataFilesAttrs[dataFileName]["dataFileType"] == "time-in-column"
-        and dataFilesAttrs[dataFileName]["timeColumnName"] == None
-    ):
-        console.print(
-            "[bold red]Warning[/] [yellow]timeColumnName[/] must be non-value value when [yellow]dataFileType[/] is set to [magenta]time-in-column[/]"
-        )
-        input("Please reset the attribution of this file")
-        index -= 1
-
-    index += 1
+    # if (dataFilesAttrs[dataFileName]["dataFileType"] == "time-in-column"
+    #     and dataFilesAttrs["timeColumn"] == None
+    # ):
+    #     console.print(
+    #         "[bold red]Warning[/] [yellow i]timeColumn[/] must be non-value value when [magenta i]dataFileType[/] is set to time-in-column"
+    #     )
+    #     Prompt.ask("Please reset the attribution of this file")
 
 
 console.clear()
