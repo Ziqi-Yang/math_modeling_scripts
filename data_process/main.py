@@ -1,3 +1,4 @@
+from calendar import c
 from collections.abc import Iterable
 from concurrent.futures import process
 import pandas as pd
@@ -24,7 +25,7 @@ console = Console()
 rootPath = sys.path[0]
 dataFolder = os.path.join(rootPath, "datas")
 resultFolder = os.path.join(rootPath, "res")
-
+cacheFolder = os.path.join(rootPath,"cache")
 dataFilesNames = os.listdir(dataFolder)
 dataFilesPath = list(map(lambda x: os.path.join(dataFolder, x), dataFilesNames))
 dataFilesPath = [dataFilePath for dataFilePath in dataFilesPath if os.path.isfile(dataFilePath)] # shouldn't include folder
@@ -176,9 +177,9 @@ else:
     alpha2 = df_country_code_dict["alpha-2"]
     alpha3 = df_country_code_dict["alpha-3"]
 
-    country_code_dict = dict(list(zip(fullname,alpha2)) + list(zip(fullname,alpha3)) + list(zip(alpha2,fullname)) + list(zip(alpha2,alpha3)) + list(zip(alpha3,fullname)) + list(zip(alpha3,alpha2)))
+    country_code_dict = dict(list(zip(fullname,alpha3)) + list(zip(alpha2,alpha3)))
 
-    with open("country_code_dict.pkl","wb") as f:
+    with open(country_code_dict_pkl_path,"wb") as f:
         pickle.dump(country_code_dict,f)
 
 with open("country_code_dict.pkl","wb") as f:
@@ -190,6 +191,8 @@ with open("country_code_dict.pkl","wb") as f:
 allMissingCountries = []
 console.clear()
 index = 0
+cachePkls = [] # store process data objects
+
 while index < len(dataFilesNames):
     dataFileName = dataFilesNames[index]
     console.rule(f"Processing [yellow]{dataFileName}[/]")
@@ -205,28 +208,35 @@ while index < len(dataFilesNames):
 
     if all(map(lambda x: len(x) == 3,df["Country"])): # ISO 3661 alpha-3
         missingCountries = [] 
+        missingEntriesNum = 0
     else:
         missingCountries = df[df["Country"].isin(country_code_dict.keys()) == False]["Country"].unique()
         df.loc[:,"Country"] = df["Country"].map(country_code_dict)
-    console.print("Mapping ISO-3661 Country Code done.")
+        missingEntriesNum = df["Country"].isna().sum()
+        df = df[df["Country"].isna() == False]
+    console.print("[*] Mapping ISO-3661 Country Code done.")
 
-    console.print(f"[yellow]Missing entries[/]: {df.Country.isna().sum()} ; [yellow]Missing Countries Number[/]: {len(missingCountries)}")
+    console.print(f"[yellow]Missing entries[/]: {missingEntriesNum} ; [yellow]Missing Countries Number[/]: {len(missingCountries)}")
     console.print("[yellow]Missing Countries[/]:")
     console.print(missingCountries)
 
     console.print()
-    console.print("[yellow]Data overview[/]:")
-    console.print(df)
-
-    console.print()
-
+    cachePath = os.path.join(cacheFolder,dataFileName)
     # NOTICE process not defined
     if dfAttrs["dataFileType"] == "time-expand":
-        time_expand(df,dfAttrs,process)
+        process = Prompt.ask("Process to apply",choices=["min","max","sum","mean","median","std","var","count"],default="mean")
+        df,lossCountries = time_expand(df,dfAttrs,process)
+        console.print("[yellow]Data overview[/] (non-empty):")
+        console.print(df)
+        console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
+        console.print(lossCountries)
     elif dfAttrs["dataFileType"] == "time-in-column":
         time_in_column(df,dfAttrs,process)
     elif dfAttrs["dataFileType"] == "complex":
         complex_data(df,dfAttrs,process)
+
+    cachePkls.append(df.copy())
+    df.to_csv(cachePath)
 
 
 
