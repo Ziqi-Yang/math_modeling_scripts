@@ -10,7 +10,7 @@ def time_expand(df:pd.DataFrame,process: str):
     df = df[df[process].isna() == False]
     return df,lossCountries
 
-def time_in_column(df:pd.DataFrame , dfAttrs: dict, process):
+def time_in_column(df:pd.DataFrame , dfAttrs: dict, process:str):
     dupErr = False
     try:
         df = df.pivot("Country",dfAttrs["timeColumnName"],dfAttrs["valueColumnName"]).rename_axis(columns=None).reset_index()
@@ -23,10 +23,6 @@ def time_in_column(df:pd.DataFrame , dfAttrs: dict, process):
             .reset_index(name='Index'))
         return dupErr,df_dup
         
-
-def complex_data(df:pd.DataFrame , dfAttrs: dict): # to aviod name crash with buildin function complex
-    pass
-
 
 
 

@@ -7,7 +7,7 @@ import sys
 import os
 from rich.console import Console
 from rich.prompt import Prompt, Confirm
-from processFunc import time_expand,time_in_column,complex_data
+from processFunc import time_expand,time_in_column
 
 import logging
 from rich.logging import RichHandler
@@ -224,11 +224,11 @@ else:
 
 # map Country Name to ISO 3661 and process datas
 allMissingCountries = []
-console.clear()
 index = 0
-cachePkls = [] # store process data objects
+cachePkls = dict() # store process data objects
 
 while index < len(dataFilesNames):
+    console.clear()
     dataFileName = dataFilesNames[index]
     console.rule(f"Processing [yellow]{dataFileName}[/]")
 
@@ -241,10 +241,6 @@ while index < len(dataFilesNames):
     console.print(f"[yellow]All Countries[/]:")
     console.print(allCoutries)
 
-    # if all(map(lambda x: len(x) == 3,df["Country"])): # ISO 3661 alpha-3
-    #     missingCountries = [] 
-    #     missingEntriesNum = 0
-    # else:
     missingCountries = df[df["Country"].isin(country_code_dict.keys()) == False]["Country"].unique()
     df.loc[:,"Country"] = df["Country"].map(country_code_dict)
     missingEntriesNum = df["Country"].isna().sum()
@@ -258,7 +254,7 @@ while index < len(dataFilesNames):
 
     console.print()
     cachePath = os.path.join(cacheFolder,dataFileName)
-    # NOTICE process not defined
+
     if dfAttrs["dataFileType"] == "time-expand":
         process = Prompt.ask("Process to apply",choices=["min","max","sum","mean","median","std","var","count"],default="mean")
 
@@ -298,15 +294,79 @@ while index < len(dataFilesNames):
                 console.print(lossCountries)
 
     elif dfAttrs["dataFileType"] == "complex":
-        complex_data(df,dfAttrs,process)
+        for subject in df[dfAttrs["subjectColumnName"]].unique():
+            df_sub = df[df[dfAttrs["subjectColumnName"]] == subject]
+            df_sub = df_sub.drop(columns=["SUBJECT"]).reset_index(drop=True)
 
-    cachePkls.append(df.copy())
-    df.to_csv(cachePath)
+            console.rule(f"[bold red]-[/] processing subject [yellow]{subject}[/]",align="left")
+            # directly copy the copy for time-in-column, hh
+            process = Prompt.ask("Process to apply for the subject",choices=["min","max","sum","mean","median","std","var","count"],default="mean")
 
+            dupErr,redicious =  time_in_column(df_sub,dfAttrs,process)
+            if dupErr == False:
+                df_sub,lossCountries = redicious # type(redicious) == tuple
+                console.print("[yellow]Data overview[/] (non-empty):")
+                console.print(df_sub)
+                console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
+                console.print(lossCountries)
+            else:
+                df_dup = redicious
+                console.print("[red]The Files contain duplicated Lines.[/] [yellow]Overview:[/]")
+                console.print(df_dup)
+                console.print("[*] Drop duplicated lines.")
+                df = df.drop_duplicates(keep="first").reset_index(drop=True)
+                console.print("[*] Reprocessing the file...")
 
+                try:
+                    dupErr,(df_sub,lossCountries) =  time_in_column(df_sub,dfAttrs,process)
+                except:
+                    log.exception("[bold red] Please reexamine your data. Your data may contains contradictory lines (like functions whose x have multiple corresponding y)[/]")
+                    exit(1)
+                if dupErr == False:
+                    console.print("[yellow]Data overview[/] (non-empty):")
+                    console.print(df_sub)
+                    console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
+                    console.print(lossCountries)
+
+            cachePkls[dfAttrs["theme"] + f"_{subject}"] = df_sub.copy()
+            cachePath = os.path.join(cacheFolder,dataFileName.split(".")[0] + f"_{subject}.csv")
+            df_sub.to_csv(cachePath)
+    
+    if dfAttrs["dataFileType"] != "complex":
+        cachePkls[dfAttrs["theme"]] = df.copy()
+        df.to_csv(cachePath)
 
     console.print()
     input("[ENTER]")
 
-
     index += 1
+
+# compose dataframes
+
+
+
+console.clear()
+console.print("[*] Saving datas using pickcle...")
+
+# save cachePkl to cache/pkl folder
+pklFolder = os.path.join(cacheFolder,"pkl") 
+if not os.path.exists(pklFolder):
+    os.mkdir(pklFolder)
+with console.status("[red]Saving datas using pickle[/]"):
+    for key in cachePkls.keys():
+        path = os.path.join(pklFolder,key + ".pkl")
+        with open(path,"wb") as f:
+            pickle.dump(cachePkls[key],f)
+            console.print(f"save [yellow]{key}[/] done.")
+with open(os.path.join(pklFolder,"readPkls.py"),"w",encoding='utf-8') as f:
+    readPkls_code = """# Read Pkls
+import pandas as pd
+import pickle\n\n"""
+
+    index = 0
+    for key in cachePkls.keys():
+        path = os.path.join(pklFolder,key + ".pkl")
+        readPkls_code += f"""with open(r"{path}","rb") as f:
+\tdf_{index} = pickle.load(f)\n"""
+        index += 1
+    f.write(readPkls_code)
