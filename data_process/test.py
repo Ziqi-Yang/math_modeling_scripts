@@ -1,3 +1,4 @@
 import os
 
-print(os.path.isfile("a/a.txt"))
+a,b = (1,2)
+print(a)

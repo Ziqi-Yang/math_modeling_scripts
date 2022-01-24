@@ -1,7 +1,6 @@
-from calendar import c
 from collections.abc import Iterable
-from concurrent.futures import process
 import pandas as pd
+from pyparsing import col
 import yaml
 import pickle
 import sys
@@ -84,6 +83,7 @@ attrsChoice = {
     "countryColumnName": None,
     "subjectColumnName": None,
     "timeColumnName": None,
+    "valueColumnName": None,
     "theme": None
 }  # single stands for no limit, but default is the word
 
@@ -91,7 +91,7 @@ index = 0
 dataFilesNames = list(dataFilesAttrs.keys())
 while index < len(dataFilesNames):
     dataFileName = dataFilesNames[index]
-    console.rule(f"[bold magenta]{dataFileName}[/]")
+    console.rule(f"[bold yellow]{dataFileName}[/]")
 
     attrIndex = 0
     attrs = list(attrsChoice.keys())
@@ -101,40 +101,78 @@ while index < len(dataFilesNames):
         prompt = ""
         if attr == "countryColumnName":
             prompt = " (Leave [grey]empty[/] if first column)"
+        elif attr == "valueColumnName":
+            prompt = " (Leave [grey]empty[/] if last column)"
         elif attr == "theme":
             theme = dataFileName.split(".")[0]
             prompt = f" (used as a column name in composed data sheet, default [yellow]{theme}[/])"
 
-        if attr == "timeColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] == "time-expand": # auto set value to None
+        if attr == "timeColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] == "time-expand": # auto set value to None, and skip question
             dataFilesAttrs[dataFileName][attr] = None
-        elif attr == "subjectColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] != "complex": # auto set value to None
+        elif attr == "subjectColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] != "complex": # auto set value to None, and skip question
             dataFilesAttrs[dataFileName][attr] = None
         else:
+            default = attrsChoice[attr][0] if isinstance(attrsChoice[attr], Iterable) else attrsChoice[attr]
+            if attr == "dataFileType":
+                if len(DATAS[dataFileName].columns) == 3:
+                    default = "time-in-column"
+                elif len(DATAS[dataFileName].columns) == 4:
+                    default = "complex"
+
             dataFilesAttrs[dataFileName][attr] = Prompt.ask(
                 f"{attr}{prompt}",
-                default=attrsChoice[attr][0]
-                if isinstance(attrsChoice[attr], Iterable)
-                else attrsChoice[attr],
+                default=default,
                 choices=attrsChoice[attr] if isinstance(attrsChoice[attr], list) else None,
             )
 
         dataFileType = dataFilesAttrs[dataFileName]["dataFileType"]
-        if attr == "timeColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] in ["time-in-column","complex"] and dataFilesAttrs[dataFileName][attr] == None:
-            console.print(
-                f"[bold red]Warning[/] [yellow]{attr}[/] must be non-null value when [yellow]dataFileType[/] is set to [bold magenta]{dataFileType}[/]"
-            )
-            input("Please reset the attribution. [ENTER]")
-            attrIndex -= 1
-        elif attr == "subjectColumnName" and dataFilesAttrs[dataFileName]["dataFileType"] in ["complex"] and dataFilesAttrs[dataFileName][attr] == None:
-            console.print(
-                f"[bold red]Warning[/] [yellow]{attr}[/] must be non-null value when [yellow]dataFileType[/] is set to [bold magenta]{dataFileType}[/]"
-            )
-            input("Please reset the attribution. [ENTER]")
-            attrIndex -= 1
-        elif attr == "countryColumnName" and dataFilesAttrs[dataFileName][attr] == None:
+        attrValue = dataFilesAttrs[dataFileName][attr]
+
+        # auto set values if file is in compliance with requirements
+        if attrIndex == 0: # after set dataFileType
+            if attrValue == "time-in-column":
+                columns = DATAS[dataFileName].columns
+                if list(columns.map(lambda x: x.lower())) == ["country","time","value"]:
+                    if Confirm.ask(f"Detect your file is in compliance with {attrValue} requirement, do you want to [yellow]auto[/] set most of the attributions?"):
+                        dataFilesAttrs[dataFileName]["countryColumnName"] = columns[0]
+                        dataFilesAttrs[dataFileName]["subjectColumnName"] = None
+                        dataFilesAttrs[dataFileName]["timeColumnName"] = columns[1]
+                        dataFilesAttrs[dataFileName]["valueColumnName"] = columns[2]
+                        console.print("[yellow]Current Attributions[/]:")
+                        console.print(dataFilesAttrs[dataFileName])
+                        attrIndex += 4 # in the later within this loop, attrIndex will also plus 1
+                    
+            elif attrValue == "complex":
+                columns = DATAS[dataFileName].columns
+                if list(columns.map(lambda x: x.lower())) == ["country","subject","time","value"]:
+                    if Confirm.ask(f"Detect your file is in compliance with {attrValue} requirement, do you want to [yellow]auto[/] set most of the attributions?"):
+                        dataFilesAttrs[dataFileName]["countryColumnName"] = columns[0]
+                        dataFilesAttrs[dataFileName]["subjectColumnName"] = columns[1]
+                        dataFilesAttrs[dataFileName]["timeColumnName"] = columns[2]
+                        dataFilesAttrs[dataFileName]["valueColumnName"] = columns[3]
+                        console.print("[yellow]Current Attributions[/]:")
+                        console.print(dataFilesAttrs[dataFileName])
+                        attrIndex += 4
+
+
+        # exmaine attribution value
+        if attr == "countryColumnName" and attrValue == None:
             dataFilesAttrs[dataFileName][attr] = DATAS[dataFileName].columns[0]
-        elif attr == "theme" and dataFilesAttrs[dataFileName][attr] == None:
+        elif attr == "valueColumnName" and attrValue == None:
+            dataFilesAttrs[dataFileName][attr] = DATAS[dataFileName].columns[-1]
+        elif attr == "theme" and attrValue == None:
             dataFilesAttrs[dataFileName][attr] = dataFileName.split(".")[0]
+        
+        # update attrValue
+        attrValue = dataFilesAttrs[dataFileName][attr]
+
+        # exmaine attribution value
+        if attr == "countryColumnName" or (dataFileType == "complex" and attr in ["subjectColumnName","timeColumnName","valueColumnName"]) or (dataFileType == "time-in-column" and attr in ["timeColumnName","valueColumnName"]):
+            if attrValue not in DATAS[dataFileName].columns:
+                console.print(f"[bold red]Warning[/] file '{dataFileName}' doesn't contain column named '{attrValue}'. Please reset the attribution. [ENTER]",end="")
+                input()
+                attrIndex -= 1
+
 
         attrIndex += 1
 
@@ -177,13 +215,10 @@ else:
     alpha2 = df_country_code_dict["alpha-2"]
     alpha3 = df_country_code_dict["alpha-3"]
 
-    country_code_dict = dict(list(zip(fullname,alpha3)) + list(zip(alpha2,alpha3)))
+    country_code_dict = dict(list(zip(fullname,alpha3)) + list(zip(alpha2,alpha3)) + list(zip(alpha3,alpha3)))
 
     with open(country_code_dict_pkl_path,"wb") as f:
         pickle.dump(country_code_dict,f)
-
-with open("country_code_dict.pkl","wb") as f:
-    pickle.dump(country_code_dict,f)
 
 
 
@@ -206,14 +241,15 @@ while index < len(dataFilesNames):
     console.print(f"[yellow]All Countries[/]:")
     console.print(allCoutries)
 
-    if all(map(lambda x: len(x) == 3,df["Country"])): # ISO 3661 alpha-3
-        missingCountries = [] 
-        missingEntriesNum = 0
-    else:
-        missingCountries = df[df["Country"].isin(country_code_dict.keys()) == False]["Country"].unique()
-        df.loc[:,"Country"] = df["Country"].map(country_code_dict)
-        missingEntriesNum = df["Country"].isna().sum()
-        df = df[df["Country"].isna() == False]
+    # if all(map(lambda x: len(x) == 3,df["Country"])): # ISO 3661 alpha-3
+    #     missingCountries = [] 
+    #     missingEntriesNum = 0
+    # else:
+    missingCountries = df[df["Country"].isin(country_code_dict.keys()) == False]["Country"].unique()
+    df.loc[:,"Country"] = df["Country"].map(country_code_dict)
+    missingEntriesNum = df["Country"].isna().sum()
+    df = df[df["Country"].isna() == False]
+
     console.print("[*] Mapping ISO-3661 Country Code done.")
 
     console.print(f"[yellow]Missing entries[/]: {missingEntriesNum} ; [yellow]Missing Countries Number[/]: {len(missingCountries)}")
@@ -225,13 +261,42 @@ while index < len(dataFilesNames):
     # NOTICE process not defined
     if dfAttrs["dataFileType"] == "time-expand":
         process = Prompt.ask("Process to apply",choices=["min","max","sum","mean","median","std","var","count"],default="mean")
-        df,lossCountries = time_expand(df,dfAttrs,process)
+
+        df,lossCountries = time_expand(df,process)
         console.print("[yellow]Data overview[/] (non-empty):")
         console.print(df)
         console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
         console.print(lossCountries)
+
     elif dfAttrs["dataFileType"] == "time-in-column":
-        time_in_column(df,dfAttrs,process)
+        process = Prompt.ask("Process to apply",choices=["min","max","sum","mean","median","std","var","count"],default="mean")
+
+        dupErr,redicious =  time_in_column(df,dfAttrs,process)
+        if dupErr == False:
+            df,lossCountries = redicious # type(redicious) == tuple
+            console.print("[yellow]Data overview[/] (non-empty):")
+            console.print(df)
+            console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
+            console.print(lossCountries)
+        else:
+            df_dup = redicious
+            console.print("[red]The Files contain duplicated Lines.[/] [yellow]Overview:[/]")
+            console.print(df_dup)
+            console.print("[*] Drop duplicated lines.")
+            df = df.drop_duplicates(keep="first").reset_index(drop=True)
+            console.print("[*] Reprocessing the file...")
+
+            try:
+                dupErr,(df,lossCountries) =  time_in_column(df,dfAttrs,process)
+            except:
+                log.exception("[bold red] Please reexamine your data. Your data may contains contradictory lines (like functions whose x have multiple corresponding y)[/]")
+                exit(1)
+            if dupErr == False:
+                console.print("[yellow]Data overview[/] (non-empty):")
+                console.print(df)
+                console.print(f"[yellow]Empty Data Countries[/] (dropped) [bold magenta]({len(lossCountries)})[/] (possibily originally empty):")
+                console.print(lossCountries)
+
     elif dfAttrs["dataFileType"] == "complex":
         complex_data(df,dfAttrs,process)
 
