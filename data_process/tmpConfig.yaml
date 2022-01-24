@@ -1,20 +1,21 @@
 complex.csv:
-  countryColumnName: LOCATION
-  dataFileType: complex
-  subjectColumnName: asd
-  timeColumnName: asd
-time-expand-0.csv:
   countryColumnName: country
-  dataFileType: time-expand
-  subjectColumnName: null
-  timeColumnName: null
-time-expand-1.csv:
+  dataFileType: complex
+  subjectColumnName: SUBJECT
+  theme: complex
+  timeColumnName: TIME
+  valueColumnName: Value
+time-expand.csv:
   countryColumnName: Country Code
   dataFileType: time-expand
   subjectColumnName: null
+  theme: time-expand
   timeColumnName: null
-time-in-column.csv:
-  countryColumnName: LOCATION
+  valueColumnName: null
+time-in-column_1.csv:
+  countryColumnName: Country
   dataFileType: time-in-column
   subjectColumnName: null
-  timeColumnName: asd
+  theme: time-in-column_1
+  timeColumnName: TIME
+  valueColumnName: Value

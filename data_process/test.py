@@ -1,4 +1,5 @@
 import os
+import processFunc
 
-a,b = (1,2)
-print(a)
+
+print(processFunc.a)
