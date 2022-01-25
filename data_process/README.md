@@ -56,7 +56,10 @@
 
 设置了`dataFileType`其余自动设置
 1. 删除数据表格中不必要的行和列
-2. 若设置`dataFileType`为``
+2. 程序会根据列数自动设置`dataFileType`的默认值,可以更改
+3. 程序会检查列名是否符合规范，符合规范将会提供自动设置选项
+当`dataFileType`为`time-in-column`时, 列名应为`country`,`time`,`value` (不区分大小写)  
+当`dataFileType`为`complex`时, 列名应为`country`, `subject`,`time`,`value` (不区分大小写)  
 
 ## 对数据表可处理可选项(`process`)
 
