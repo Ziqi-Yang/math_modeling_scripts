@@ -8,7 +8,7 @@
 sharedKeys = [key for key in df["Country"] if key in list(df["Country"])]
 ```
 
-## 查找重复行
+## 重复行处理
 
 ### 检测重复行
 
