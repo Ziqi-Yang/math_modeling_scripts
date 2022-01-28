@@ -374,7 +374,7 @@ datas = list(cachePkls.values()).copy()
 sharedKeys = [key for key in datas[0].index if all(map(lambda x: key in list(x.index),datas))]
 console.print(f"Here are [yellow]shared countries[/] [red]({len(sharedKeys)})[/] though all the data sheets:")
 console.print(f"{sharedKeys}") # for dense view
-
+input("[ENTER]")
 console.print("[*] concating datas")
 for i in range(len(datas)):
     data = datas[i]
