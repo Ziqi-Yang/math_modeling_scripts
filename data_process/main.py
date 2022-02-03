@@ -1,3 +1,4 @@
+from calendar import c
 from collections.abc import Iterable
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -401,17 +402,21 @@ if not os.path.exists(chartFolder):
     os.mkdir(chartFolder)
 if Confirm.ask("Do you want to get the [red]heatmap[/] of the [yellow]correlation[/] between each variable(column)?"):
     console.print("[*] Using [yellow]pearson[/] correlation coefficient.")
-    console.print("[*] Creating heatmap...")
+    console.print("[*] Creating pairplot...")
+    sns.pairplot(df_final,kind="reg")
+    plt.savefig(os.path.join(chartFolder,"pairplot.png"),dpi=300)
 
+    console.print("[*] Creating heatmap...")
     cmap_0 = "RdYlGn"
     cmap_1 = sns.diverging_palette(230, 20, as_cmap=True)
-    cmaps = [cmap_0,cmap_1]
+    cmap_2 = "YlGnBu"
+    cmaps = [cmap_0,cmap_1,cmap_2]
 
     index = 0
     for cmap in cmaps:
         plt.figure(figsize=(16,10))
         relation = df_final.corr()
-        sns.heatmap(relation,xticklabels=relation.columns,yticklabels=relation.columns,annot=True,cmap=cmap,center=0)
+        sns.heatmap(relation,xticklabels=relation.columns,yticklabels=relation.columns,annot=True,cmap=cmap,center=0,annot_kws={"fontweight":"demibold"})
         plt.savefig(os.path.join(chartFolder,f"correlation_{index}.png"),dpi=300)
         index += 1
 
