@@ -1,3 +1,5 @@
 # Math Modeling Scripts
 
-a collection of useful scripts for math modeling.
+A collection of useful scripts for math modeling.
+
+工具推荐: [SPSSPRO](https://www.spsspro.com/)
