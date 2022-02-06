@@ -21,3 +21,11 @@ plt.getp(stemlines,"color") # 得到参考格式
 # [[0.7, 0.46666667, 0.70588235, 1.        ]]
 # plt.setp(stemlines,"color",[[0.7, 0.46666667, 0.70588235, 1.        ]])
 ```
+
+## 安装`matplotlib`的`basemap`
+
+虽然`basemap`官方说将要被抛弃了，推荐使用[cartopy](https://scitools.org.uk/cartopy/docs/latest/getting_started/index.html)，但是网上有些代码还是用`basemap`，为了快而方便地调用别人的代码，还是写了这个  
+`matplotlib`的`basemap`很坑，会遇到各种报错,总之这里给出通用安装方法
+步骤:
+    1. `conda`创建`python3.6`的环境，然后再`conda install basemap`
+    2. 然后将`matplotlib`降级至`3.2`,命令`pip install -U matplotlib==3.2`
