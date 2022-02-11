@@ -65,6 +65,4 @@
 
 ### Assumption
 
-![](./images/inspiration-8.png)
-
-
+![2021美赛E题](./images/inspiration-8.png) (来自2021美赛E题)
