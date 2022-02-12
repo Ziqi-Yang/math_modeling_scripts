@@ -1,4 +1,13 @@
-# 其他的一些有用的图
+# 说明
+一些可能会用到的图,其中`myArt`文件夹下是我自己设计的图
+
+## 参考
+
+1. [All Charts](https://www.python-graph-gallery.com/all-charts/)
+2. [Seaborn Example](https://seaborn.pydata.org/examples/index.html)
+3. [Matplotlib Example](https://matplotlib.org/stable/gallery/index.html)
+
+## 其他的一些可能会用到的图
 点击图片跳转(需要安装浏览器插件`link to text fragment`(谷歌官方发布的插件))
 [![Recorder items](./res/0.png)](https://www.python-graph-gallery.com/circular-barplot-basic#:~:text=%E2%86%95%EF%B8%8F-,reordering,-Last%20but%20not)
 

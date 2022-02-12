@@ -23,7 +23,7 @@
 
 ## 所有属性
 
-1.  `dataFileType`: `time-expand`,`time-in-column`,`complex` 默认值 `time-expand`
+1.  `dataFileType`: `time-expand`,`time-in-column`,`complex` 默认值 会根据文件自动判断
 
 
 - `time-expand`:
