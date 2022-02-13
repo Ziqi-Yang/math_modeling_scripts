@@ -1,0 +1,1076 @@
+
+                <html lang="en" class="simpread-font simpread-theme-root" style='font-size: 65%!important;'>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+                        <meta name="author" content="Kenshin"/>
+                        <meta name="description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展" />
+                        <meta name="keywords" content="Chrome extension, Chrome 扩展, 阅读模式, 沉浸式阅读, 简悦, 简阅, read mode, reading mode, reader view, firefox, firefox addon, userscript, safari, opera, tampermonkey"/>
+                        <meta name="thumbnail" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:title" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <meta property="og:type" content="website">
+                        <meta property="og:local" content="zh_CN"/>
+                        <meta property="og:url" content="http://ksria.com/simpread"/>
+                        <meta property="og:image" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:image:type" content="image/png"/>
+                        <meta property="og:image:width" content="960"/>
+                        <meta property="og:image:height" content="355"/>
+                        <meta property="og:site_name" content="http://ksria.com/simpread"/>
+                        <meta property="og:description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <style type="text/css">.simpread-font{font:300 16px/1.8 -apple-system,PingFang SC,Microsoft Yahei,Lantinghei SC,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#333;text-rendering:optimizelegibility;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}.simpread-hidden{display:none}.simpread-read-root{display:-webkit-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:0;top:-1000px;left:0;width:100%;z-index:2147483646;overflow-x:hidden;opacity:0;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}.simpread-read-root-show{top:0}.simpread-read-root-hide{top:1000px}sr-read{display:-webkit-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column;margin:20px 20%;min-width:400px;min-height:400px;text-align:center}read-process{position:fixed;top:0;left:0;height:3px;width:100%;background-color:#64b5f6;-webkit-transition:width 2s;transition:width 2s;z-index:20000}sr-rd-content-error{display:block;position:relative;margin:0;margin-bottom:30px;padding:25px;background-color:rgba(0,0,0,.05)}sr-rd-footer{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;font-size:14px}sr-rd-footer,sr-rd-footer-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}sr-rd-footer-group{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-rd-footer-line{width:100%;border-top:1px solid #e0e0e0}sr-rd-footer-text{min-width:150px}sr-rd-footer-copywrite{margin:10px 0 0;color:inherit}sr-rd-footer-copywrite abbr{-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-decoration:none}sr-rd-footer-copywrite .second{margin:10px 0}sr-rd-footer-copywrite .third a:hover{border:none!important}sr-rd-footer-copywrite .third a:first-child{margin-right:50px}sr-rd-footer-copywrite .sr-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:33px;height:33px;opacity:.8;-webkit-transition:opacity .5s ease;transition:opacity .5s ease;cursor:pointer}sr-rd-footer-copywrite .sr-icon:hover{opacity:1}sr-rd-footer-copywrite a,sr-rd-footer-copywrite a:link,sr-rd-footer-copywrite a:visited{margin:0;padding:0;color:inherit;background-color:transparent;font-size:inherit!important;line-height:normal;text-decoration:none;vertical-align:baseline;vertical-align:initial;border:none!important;box-sizing:border-box}sr-rd-footer-copywrite a:focus,sr-rd-footer-copywrite a:hover,sr-rd-footer a:active{color:inherit;text-decoration:none;border-bottom:1px dotted!important}.simpread-blocks{text-decoration:none!important}.simpread-blocks *{margin:0}.simpread-blocks a{padding:0;text-decoration:none!important}.simpread-blocks img{margin:0;padding:0;border:0;background:transparent;box-shadow:none}.simpread-focus-root{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,92%,.9);z-index:2147483645;opacity:0;-webkit-transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms;transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms}.simpread-focus-highlight{position:relative;box-shadow:0 0 0 20px #fff;background-color:#fff;overflow:visible;z-index:2147483646}.sr-controlbar-bg sr-rd-crlbar,.sr-controlbar-bg sr-rd-crlbar fab{z-index:2147483647}sr-rd-crlbar.controlbar{position:fixed;right:0;bottom:0;width:100px;height:100%;opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}sr-rd-crlbar.controlbar:hover{opacity:1}sr-rd-crlbar fap *{box-sizing:border-box}@media (max-height:620px){fab{zoom:.8}}@media (max-height:783px){dialog-gp dialog-content{max-height:580px}dialog-gp dialog-footer{border-top:1px solid #e0e0e0}}.simpread-highlight-selector{outline:3px dashed #1976d2!important;cursor:pointer!important}.simpread-highlight-controlbar,.simpread-highlight-selector{background-color:#fafafa!important;opacity:.8!important;-webkit-transition:opacity .5s ease!important;transition:opacity .5s ease!important}.simpread-highlight-controlbar{position:relative!important;border:3px dashed #1976d2!important}simpread-highlight,sr-snapshot-ctlbar{position:fixed;top:0;left:0;right:0;padding:15px;height:50px;background-color:rgba(50,50,50,.9);box-shadow:0 2px 5px rgba(0,0,0,.26);box-sizing:border-box;z-index:2147483640}simpread-highlight,sr-highlight-ctl,sr-snapshot-ctlbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-highlight-ctl{margin:0 5px;width:50px;height:20px;color:#fff;background-color:#1976d2;border-radius:4px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);cursor:pointer}toc-bg{position:fixed;left:0;top:0;width:50px;height:200px;font-size:medium}toc-bg:hover{z-index:3}.toc-bg-hidden{opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}.toc-bg-hidden:hover{opacity:1;z-index:3}.toc-bg-hidden:hover toc{width:180px}toc *{all:unset}toc{position:fixed;left:0;top:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:10px;width:0;max-width:200px;max-height:500px;overflow-x:hidden;overflow-y:hidden;cursor:pointer;border:1px solid hsla(0,0%,62%,.22);-webkit-transition:width .5s;transition:width .5s}toc:hover{overflow-y:auto}toc.mini:hover{width:200px!important}toc::-webkit-scrollbar{width:3px}toc::-webkit-scrollbar-thumb{border-radius:10px;background-color:hsla(36,2%,54%,.5)}toc outline{position:relative;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;padding:2px 0;min-height:21px;line-height:21px;text-align:left}toc outline a,toc outline a:active,toc outline a:focus,toc outline a:visited{display:block;width:100%;color:inherit;font-size:11px;text-decoration:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}toc outline a:hover{font-weight:700!important}toc outline a.toc-outline-theme-dark,toc outline a.toc-outline-theme-night{color:#fff!important}.toc-level-h1{padding-left:5px}.toc-level-h2{padding-left:15px}.toc-level-h3{padding-left:25px}.toc-level-h4{padding-left:35px}.toc-outline-active{border-left:2px solid #f44336}toc outline active{position:absolute;left:0;top:0;bottom:0;padding:0 0 0 3px;border-left:2px solid #e8e8e8}sr-kbd{background:-webkit-gradient(linear,0 0,0 100%,from(#fff785),to(#ffc542));border:1px solid #e3be23;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;position:absolute;left:0;padding:1px 3px 0;font-size:11px!important;font-weight:700;box-shadow:0 3px 7px 0 rgba(0,0,0,.3);overflow:hidden;border-radius:3px}.sr-kbd-a{position:relative}kbd-mapping{position:fixed;left:5px;bottom:5px;-ms-flex-flow:row;flex-flow:row;width:250px;height:500px;background-color:#fff;border:1px solid hsla(0,0%,62%,.22);box-shadow:0 2px 5px rgba(0,0,0,.26);border-radius:3px}kbd-mapping,kbd-maps{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}kbd-maps{margin:40px 0 20px;width:100%;overflow-x:auto}kbd-maps::-webkit-scrollbar-thumb{background-clip:padding-box;border-radius:10px;border:2px solid transparent;background-color:rgba(85,85,85,.55)}kbd-maps::-webkit-scrollbar{width:10px;-webkit-transition:width .7s cubic-bezier(.4,0,.2,1);transition:width .7s cubic-bezier(.4,0,.2,1)}kbd-mapping kbd-map-title{position:absolute;margin:5px 0;width:100%;font-size:14px;font-weight:700}kbd-maps-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}kbd-maps-title{margin:5px 0;padding-left:53px;font-size:12px;font-weight:700}kbd-map kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}kbd-map kbd-name{display:inline-block;text-align:right;width:50px}kbd-map kbd-desc{padding-left:3px}sharecard-bg{position:fixed;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(0,0,0,.4);z-index:2147483647}sharecard{max-width:450px;background-color:#64b5f6}sharecard,sharecard-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-head{margin:25px;color:#fff;border-radius:10px;box-shadow:0 2px 6px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.15)}sharecard-card{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-card,sharecard-top{display:-webkit-box;display:-ms-flexbox;display:flex}sharecard-top{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:65px;background-color:#fff;color:#878787;font-size:25px;font-weight:500;border-top-left-radius:10px;border-top-right-radius:10px}sharecard-top span.logos{display:block;width:48px;height:48px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABU1BMVEUAAAAnNJMnNZI3Q5onNJInNJMnNJInNJMnNJI8SJ0tOZY/S55EUKAoNJI6RpwoNJNIU6InNJInNJImNJI7SJwmNJJ2fLUiMJFKVaNCTJ9faK1HUaJOWKVSXaUnNJNYY6pye7cmM5JXYKhwebMjMI8mL4719fW9vb0oNZP/UlLz8/QqN5TAwMAnNJPv7+/Pz8/q6+/p6enNzc3Kysry8vMsOJXc3env7/LU1uXo29vR0dHOzs7ExMTwjo73bW37XV3Aj1TCYELl5u3n5+fW2Obn6O7f4OrZ2+g0QJkxPpgvO5bh4uvS1OTP0ePCwsJQW6ZLVqTs7fHd3d3V1dXqv79VX6lET6A1TIxXUIBSgHxWQnpelHf+WVnopkXqbC7j5Ozi4uLDw8NGUaFATJ9SgH3r6+vGyd7BxNva2trX19ejqM2gpczHx8dze7Zha67Z2dlTgH1aXQeSAAAAJnRSTlMA6ff+497Y8NL+/fv49P379sqab/BeOiX06tzVy8m/tKqpalA7G6oKj0EAAAJlSURBVEjHndNXWxpBFIDhcS2ICRLAkt4Dx4WhLk0E6R0MYoIISrWX5P9f5cwSIRC2+T1czMV5n2FnZwn2eWONUqCAv3H2Uf5Ra1hx4+0WEXtDQW0fCPYJ1EffEfIV4CSROAE4jsePoTFsNmTJF/IeIHF2lgCIn57GodlqDWXBK7IwBYatVlMWFAildPKX7I3m74Z9fsCiQChoimoFQAz04Ad2gH1n9fv9n9hgMNDr9euLWD6fLxQKxaLfb7dTSlahbFVdEPwIQtrAihZQgyKCtCagbQe3xh0QFMgy5MR11+ewYY5/qlZ7vT2xu93ULKjbFLpiUxnIIwjgKmVTLDUFXMrAi2NJWCRLIthTBo4xyOLKpwyqU6CuDCI41hFBCVdOhyLw4FgJ1skCAiyl9BSHbCorgo6VJXTru5hrVCQS8Yr5xLzX59YJSFpVFwD9U0BGC3hGdFpATgRupTGe9R9I1b1ePBvXKDyvq/O/44LT4/E4BUbSCAwj8Evq6HlnOBprx6JhJz8Gktc7xeaP9ndY+0coQvCccFBD4JW60UIY50ciLOAODAQRVOeCHm4Q3Xks6uRDY+CQ+AR4T2wMYh6+jMCIQOp78CFoj0H7EQgIuhI3dGaHCrwgADwCPjJvA372GRigCJg49FUdk3D87pq3zp4SA5zc1Zh9DxfwkpjgUg5Mv+lbeE3McC8Lpu7SA3wk2xzcqL2tN5DfIsQC8HB7UamUy6FQOpTO5QKBQDZbKnWSyUzGjdWCwaDA8+7Le4BNgm3qQGWchYh9s5hNq6wVbBlbwhZYOp3OYOA4zmgEypnM2zj8ByIdedKrH8vDAAAAAElFTkSuQmCC");zoom:.8}sharecard-content{padding:15px;max-height:500px;font-size:20px;text-align:justify;background-color:#2196f3;overflow-x:hidden;overflow-y:auto}sharecard-via{padding:10px;font-size:10px;background-color:#2196f3}sharecard-footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:100px;background-color:#fff;color:#878787;font-size:15px;font-weight:500;border-bottom-left-radius:10px;border-bottom-right-radius:10px}sharecard-footer,sharecard-footer div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sharecard-footer span.qrcode{display:block;width:100px;height:100px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAA7VBMVEUAAAD///8ZGRnw8PBWVlb4+PgeHh719fVEREQlJSUODg6Ojo7Ly8v9/f1NTU2VlZUFBQV6enrCwsLy8vLh4eE0NDQLCwu8vLyXl5dxcXHa2trAwMCFhYVDQ0OysrKampo7OzssLCwICAioqKjJyckhISHu7u4/Pz9TU1NQUFBLS0tAQED6+vrS0tKRkZFISEgvLy+goKB+fn5vb29nZ2fm5uYbGxvk5OTX19d2dnZaWlre3t5hYWEyMjK5ubkoKCgVFRXQ0NDMzMzFxcW0tLSsrKykpKSMjIzq6urU1NSAgICvr6+cnJyHh4dsbGyfc25QAAAFkElEQVRIx4WXB3faMBCA74wHxgMMGAOh1MyyVyBAmtVmd/3/n1OdDtWstt/Li5JD35MtnU4CMnCIlkLEOpSKuMPhuI4FE444L9+dyv3zciad/rAjfU/yOPpGcjWS1NKSGsk29WTSD1IeYsIPkvsAJF+C5BIZkieYMNjJnsF4+JHk61wOSlVDyOIPqKBgZIxYTrqy/AmNtC1ps7yqlgE6dgYa1WqD5aV9SbKDbe6ZNnCq5A5ILlhGjEASIoawJdmHHo98AZLOnmxzKM9yK9Aht63FoAWBBmEgsEHnkfMgsZU8PJbpbXJd3MIep/Lg/MjbRqMRRuNtQ4Tthga5RiNzfmSWD97ZExQ64HhtgLb3CmbBGyj54vixjyeMsKjnV4AvOAHTwsHphKnH9toXki7Li3jLsgswizskv+c3PHKXe7ZHu5E/YMKcM2yqZIJkAclZTPClbJezivI1yTr4f+TeMib5qXxHsr7XtUFJDIc8pLAHA7Su4JXkd8ySnKZddQXH2NohswIutRu0Qu0jyS46JPugU+gISB1R8NBKWegVUsahTKEjAP9Bm5bKAc3DPlzjKaDvscE7PeEJu63WUg9a82tdA1O/ESupL9Cr6C1cXetjIe9zgQ4kvKLgHi6xC5LcGq9hhmiK0AYgUvLQtzm3n/x0jnum/Vo9j1jxg/pL3/f9W8isMOsv6/Ubf47rvl+u17nnZ1xQ+4iIXa6IpRVeimEEE3pnxO8kIz4CbFDyidVSpooBCCLLsj5noFlqUg2rwK0l+Anmm+VhCzKfrRHtqjGOLANxUKIUiYvFEcuaaZpXANniD5ZzpiBDTSRkuDJfWM6awxGuikUArp7fIOE7RlB6OygGTyhfsMyrtwDNIAkcp1YRhKC9Oh2IHUFQ6UPupnLL3icODaD5zVlUto7zhm1n7kmZ5kDSQBxykfZhD66eaQBoWriEGPcA182C4Crst90Z9NwvHgahDTALw/Ae4D500Pjq3oj/4sjtwcwVrCkkgB01HB8cdM0iIlWSr6IpNqFO+1mDHQFWORtO5EIi08b4jxy6giBsgKDnRnEYYdd9nIYvaLmuhS/h9DF5bEFr/7HTKAjUqWY1oUUBKgYEZdgIP6gJE2xQIWVvLhZBcAWx843kz87PDDi4cgR92s8/1FLpAGNeKiUbGtRQEIPkGb9TM1EF8MpCVEni7pIkkUdDs1ZcI/ZUer6YZg4WxTtqMmYsZJWebbOzEekZV4sCKaNhBaXQQ0NtjL71ZooNE1vWLfyyyFUbw7MsD0fWOFMSqAnbwj1Kuk0Aqp4aJ91MZhhvyS7+oQoMy5v63Jfoz/UYfPSiep2KQb5e4/gt1Ycdc7Se6jNyVbpuQNI08FrICQ6ccKnSXddrKCnqkqWFupJFAewKudSTBVAyBEjrLSXjCYnc5rrdQVl6VaiKqOTToi/kaSrlcW5fpGpgrlJTLvoGVxKDOg7PHzc6NLXOmuUHTZQhTWvS4T7T5ixPqGPz/EHXp/azkMeQoGOqBBOSq1gD4vwRe1culz8W8HlZKQt6Sjbm5XeS9eWizJw73HcsOW8mSpa0eT8zfK1w85LdtWKTf5dWfCPzMg5J+MBdsvvy6Q2QD/d91sfzouRz9zAdBp6HCcUzskccyBdKzjTC9ZE8HT8+JHLxtiE4d33Ud0uleOObvpXZk4E4/9h2sKD9t6oxgaCFxs9AHiI3wYJCndMbIMs9lLi7vEHFLxAUURyciOnTyzrLH6qSJwo+8CWuQIFL2wSoVyvQea/qtk2yvPtb4mekZMhJQkPwyvIzBbJGJD+jX3eGcfIFhWVmxsVAG5FMgSzm9y4wKL8aJdzvyctoTqEgep6K5lckWGM3uuuA5DadFvIhiTzBL1xzVtT0UDEDxd9ldeutcJLoyvUaoPgNdiqckZLamd0AAAAASUVORK5CYII=")}sharecard-control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0 19px;height:80px;background-color:#fff}simpread-snapshot{width:100%;height:100%;cursor:move;z-index:2147483645}simpread-snapshot,sr-mask{position:fixed;left:0;top:0}sr-mask{background-color:rgba(0,0,0,.1)}.simpread-feedback,.simpread-urlscheme{position:fixed;right:20px;bottom:20px;z-index:2147483646}simpread-feedback,simpread-urlscheme{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:20px 20px 0;width:500px;color:rgba(51,51,51,.87);background-color:#fff;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.26);overflow:hidden;-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transition:all .6s ease;transition:all .6s ease}simpread-feedback *,simpread-urlscheme *{font-size:12px!important;box-sizing:border-box}simpread-feedback.active,simpread-urlscheme.active{-webkit-animation-name:srFadeInUp;animation-name:srFadeInUp;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback.hide,simpread-urlscheme.hide{-webkit-animation-name:srFadeInDown;animation-name:srFadeInDown;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback sr-fb-label,simpread-urlscheme sr-urls-label{width:100%}simpread-feedback sr-fb-head,simpread-urlscheme sr-urls-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:5px;width:100%}simpread-feedback sr-fb-content,simpread-urlscheme sr-urls-content{margin-bottom:5px;width:100%}simpread-feedback sr-urls-footer,simpread-urlscheme sr-urls-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-fb-a,simpread-urlscheme sr-urls-a{color:#2163f7;cursor:pointer}simpread-feedback text-field-state,simpread-urlscheme text-field-state{border-top:none rgba(34,101,247,.8)!important;border-left:none rgba(34,101,247,.8)!important;border-right:none rgba(34,101,247,.8)!important;border-bottom:2px solid rgba(34,101,247,.8)!important}simpread-feedback switch,simpread-urlscheme switch{margin-top:0!important}@-webkit-keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}@keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}simpread-feedback sr-fb-head{font-weight:700}simpread-feedback sr-fb-content{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}simpread-feedback sr-fb-content,simpread-feedback sr-fb-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}simpread-feedback sr-fb-footer{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-close{position:absolute;right:20px;cursor:pointer;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s;z-index:200}simpread-feedback sr-close:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}simpread-feedback sr-stars i{margin-right:10px;cursor:pointer}simpread-feedback sr-stars i svg{-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}simpread-feedback sr-stars i svg:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars i.active svg{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}simpread-feedback sr-emojis{display:block;height:100px;overflow:hidden}simpread-feedback sr-emoji{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s}simpread-feedback sr-emoji>svg{margin:15px 0;width:70px;height:70px;-ms-flex-negative:0;flex-shrink:0}simpread-feedback sr-stars-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 20px}</style>
+                        <style type="text/css">.simpread-theme-root{font-size:62.5%!important}sr-rd-content,sr-rd-desc,sr-rd-title{width:100%}sr-rd-title{display:-webkit-box;margin:1em 0 .5em;overflow:hidden;text-overflow:ellipsis;text-rendering:optimizelegibility;-webkit-line-clamp:3;-webkit-box-orient:vertical}sr-rd-content{text-align:left;word-break:break-word}sr-rd-desc{text-align:justify;line-height:2.4;margin:0 0 1.2em;box-sizing:border-box}sr-rd-content{font-size:25.6px;font-size:1.6rem;line-height:1.6}sr-rd-content h1,sr-rd-content h1 *,sr-rd-content h2,sr-rd-content h2 *,sr-rd-content h3,sr-rd-content h3 *,sr-rd-content h4,sr-rd-content h4 *,sr-rd-content h5,sr-rd-content h5 *,sr-rd-content h6,sr-rd-content h6 *{word-break:break-all}sr-rd-content div,sr-rd-content p{display:block;float:inherit;line-height:1.6;font-size:25.6px;font-size:1.6rem}sr-rd-content div,sr-rd-content p,sr-rd-content pre,sr-rd-content sr-blockquote{margin:0 0 1.2em;word-break:break-word}sr-rd-content a{padding:0 5px;vertical-align:baseline;vertical-align:initial}sr-rd-content a,sr-rd-content a:link{color:inherit;font-size:inherit;font-weight:inherit;border:none}sr-rd-content a:hover{background:transparent}sr-rd-content img{margin:10px;padding:5px;max-width:100%;background:#fff;border:1px solid #bbb;box-shadow:1px 1px 3px #d4d4d4}sr-rd-content figcaption{text-align:center;font-size:14px}sr-rd-content sr-blockquote{display:block;position:relative;padding:15px 25px;text-align:left;line-height:inherit}sr-rd-content sr-blockquote:before{position:absolute}sr-rd-content sr-blockquote *{margin:0;font-size:inherit}sr-rd-content table{width:100%;margin:0 0 1.2em;word-break:keep-all;word-break:normal;overflow:auto;border:none}sr-rd-content table td,sr-rd-content table th{border:none}sr-rd-content ul{margin:0 0 1.2em;margin-left:1.3em;padding:0;list-style:disc}sr-rd-content ol{list-style:decimal;margin:0;padding:0}sr-rd-content ol li,sr-rd-content ul li{font-size:inherit;list-style:disc;margin:0 0 1.2em}sr-rd-content ol li{list-style:decimal;margin-left:1.3em}sr-rd-content ol li *,sr-rd-content ul li *{margin:0;text-align:left;text-align:initial}sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em}sr-rd-content li ul{list-style:circle}sr-rd-content pre{font-family:Consolas,Monaco,Andale Mono,Source Code Pro,Liberation Mono,Courier,monospace;display:block;padding:15px;line-height:1.5;word-break:break-all;word-wrap:break-word;white-space:pre;overflow:auto}sr-rd-content pre,sr-rd-content pre *,sr-rd-content pre div{font-size:17.6px;font-size:1.1rem}sr-rd-content li pre code,sr-rd-content p pre code,sr-rd-content pre{background-color:transparent;border:none}sr-rd-content pre code{margin:0;padding:0}sr-rd-content pre code,sr-rd-content pre code *{font-size:17.6px;font-size:1.1rem}sr-rd-content pre p{margin:0;padding:0;color:inherit;font-size:inherit;line-height:inherit}sr-rd-content li code,sr-rd-content p code{margin:0 4px;padding:2px 4px;font-size:17.6px;font-size:1.1rem}sr-rd-content mark{margin:0 5px;padding:2px;background:#fffdd1;border-bottom:1px solid #ffedce}.sr-rd-content-img{width:90%;height:auto}.sr-rd-content-img-load{width:48px;height:48px;margin:0;padding:0;border-style:none;border-width:0;background-repeat:no-repeat;background-image:url(data:image/gif;base64,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)}.sr-rd-content-center{text-align:center;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-orient:vertical}.sr-rd-content-center-small{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.sr-rd-content-center-small img{margin:0;padding:0;border:0;box-shadow:none}img.simpread-img-broken{cursor:pointer}.sr-rd-content-nobeautify{margin:0;padding:0;border:0;box-shadow:0 0 0}sr-rd-mult{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin:0 0 16px;padding:16px 0 24px;width:100%;background-color:#fff;border-radius:4px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15)}sr-rd-mult:hover{-webkit-transition:all .45s 0ms;transition:all .45s 0ms;box-shadow:1px 1px 8px rgba(0,0,0,.16)}sr-rd-mult sr-rd-mult-content{padding:0 16px;overflow:auto}sr-rd-mult sr-rd-mult-avatar,sr-rd-mult sr-rd-mult-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sr-rd-mult sr-rd-mult-avatar{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 15px}sr-rd-mult sr-rd-mult-avatar span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;max-width:75px;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:16px;font-size:1rem}sr-rd-mult sr-rd-mult-avatar img{margin-bottom:0;max-width:50px;max-height:50px;width:50px;height:50px;border-radius:50%}sr-rd-mult sr-rd-mult-content img{max-width:80%}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center{margin:0}sr-page{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}</style>
+                        <style type="text/css">sr-rd-theme-github{display:none}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{position:relative;margin-top:1em;margin-bottom:1pc;font-weight:700;line-height:1.4;text-align:left;color:#363636}sr-rd-content h1{padding-bottom:.3em;font-size:57.6px;font-size:3.6rem;line-height:1.2}sr-rd-content h2{padding-bottom:.3em;font-size:44.8px;font-size:2.8rem;line-height:1.225}sr-rd-content h3{font-size:38.4px;font-size:2.4rem;line-height:1.43}sr-rd-content h4{font-size:32px;font-size:2rem}sr-rd-content h5,sr-rd-content h6{font-size:25.6px;font-size:1.6rem}sr-rd-content h6{color:#777}sr-rd-content ol,sr-rd-content ul{list-style-type:disc;padding:0;padding-left:2em}sr-rd-content ol ol,sr-rd-content ul ol{list-style-type:lower-roman}sr-rd-content ol ol ol,sr-rd-content ol ul ol,sr-rd-content ul ol ol,sr-rd-content ul ul ol{list-style-type:lower-alpha}sr-rd-content table{width:100%;overflow:auto;word-break:normal;word-break:keep-all}sr-rd-content table th{font-weight:700}sr-rd-content table td,sr-rd-content table th{padding:6px 13px;border:1px solid #ddd}sr-rd-content table tr{background-color:#fff;border-top:1px solid #ccc}sr-rd-content table tr:nth-child(2n){background-color:#f8f8f8}sr-rd-content sr-blockquote{border-left:4px solid #ddd}.simpread-theme-root{background-color:#fff;color:#333}sr-rd-title{font-family:PT Sans,SF UI Display,\.PingFang SC,PingFang SC,Neue Haas Grotesk Text Pro,Arial Nova,Segoe UI,Microsoft YaHei,Microsoft JhengHei,Helvetica Neue,Source Han Sans SC,Noto Sans CJK SC,Source Han Sans CN,Noto Sans SC,Source Han Sans TC,Noto Sans CJK TC,Hiragino Sans GB,sans-serif;font-size:54.4px;font-size:3.4rem;font-weight:700;line-height:1.3}sr-rd-desc{position:relative;margin:0;margin-bottom:30px;padding:25px;padding-left:56px;font-size:28.8px;font-size:1.8rem;color:#777;background-color:rgba(0,0,0,.05);box-sizing:border-box}sr-rd-desc:before{content:"\201C";position:absolute;top:-28px;left:16px;font-size:80px;font-family:Arial;color:rgba(0,0,0,.15)}sr-rd-content,sr-rd-content *,sr-rd-content div,sr-rd-content p{color:#363636;font-weight:400;line-height:1.8}sr-rd-content b *,sr-rd-content strong,sr-rd-content strong * sr-rd-content b{-webkit-animation:none 0s ease 0s 1 normal none running;animation:none 0s ease 0s 1 normal none running;-webkit-backface-visibility:visible;backface-visibility:visible;background:transparent none repeat 0 0/auto auto padding-box border-box scroll;border:medium none currentColor;border-collapse:separate;-o-border-image:none;border-image:none;border-radius:0;border-spacing:0;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;color:#000;-webkit-columns:auto;-moz-columns:auto;columns:auto;-webkit-column-count:auto;-moz-column-count:auto;column-count:auto;-webkit-column-fill:balance;-moz-column-fill:balance;column-fill:balance;-webkit-column-gap:normal;-moz-column-gap:normal;column-gap:normal;-webkit-column-rule:medium none currentColor;-moz-column-rule:medium none currentColor;column-rule:medium none currentColor;-webkit-column-span:1;-moz-column-span:1;column-span:1;-webkit-column-width:auto;-moz-column-width:auto;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;direction:ltr;display:inline;empty-cells:show;float:none;font-family:serif;font-size:medium;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;line-height:normal;height:auto;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;left:auto;letter-spacing:normal;list-style:disc outside none;margin:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:2;outline:medium none invert;overflow:visible;overflow-x:visible;overflow-y:visible;padding:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;-webkit-perspective:none;perspective:none;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%;position:static;right:auto;-moz-tab-size:8;-o-tab-size:8;tab-size:8;table-layout:auto;text-align:left;text-align-last:auto;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;top:auto;-webkit-transform:none;transform:none;-webkit-transform-origin:50% 50% 0;transform-origin:50% 50% 0;-webkit-transform-style:flat;transform-style:flat;-webkit-transition:none 0s ease 0s;transition:none 0s ease 0s;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:2;width:auto;word-spacing:normal;z-index:auto;all:initial}sr-rd-content a,sr-rd-content a:link{color:#4183c4;text-decoration:none}sr-rd-content a:active,sr-rd-content a:focus,sr-rd-content a:hover{color:#4183c4;text-decoration:underline}sr-rd-content pre{background-color:#f7f7f7;border-radius:3px}sr-rd-content li code,sr-rd-content p code{background-color:rgba(0,0,0,.04);border-radius:3px}.simpread-multi-root{background:#f8f9fa}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">@media (pointer:coarse){sr-read{margin:20px 5%!important;min-width:0!important;max-width:90%!important}sr-rd-title{margin-top:0;font-size:2.7rem}sr-rd-content sr-blockquote,sr-rd-desc{margin:10 0!important;padding:0 0 0 10px!important;width:90%;font-size:1.8rem;font-style:normal;line-height:1.7;text-align:justify}sr-rd-content{font-size:1.75rem;font-weight:300}sr-rd-content figure{margin:0;padding:0;text-align:center}sr-rd-content a,sr-rd-content a:link,sr-rd-content li code,sr-rd-content p code{font-size:inherit}sr-rd-footer{margin-top:20px}sr-blockquote,sr-blockquote *{margin:5px!important;padding:5px!important}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6,sr-rd-title{font-family:PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;font-weight:100;line-height:1.35}sr-rd-content-h1,sr-rd-content-h2,sr-rd-content-h3,sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}sr-rd-content-h1,sr-rd-content h1{font-size:1.8em}sr-rd-content-h2,sr-rd-content h2{font-size:1.6em}sr-rd-content-h3,sr-rd-content h3{font-size:1.4em}sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{font-size:1.2em}sr-rd-content-ul,sr-rd-content ul{margin-left:1.3em!important;list-style:disc}sr-rd-content-ol,sr-rd-content ol{list-style:decimal;margin-left:1.9em!important}sr-rd-content-ol ol,sr-rd-content-ol ul,sr-rd-content-ul ol,sr-rd-content-ul ul,sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em!important}sr-rd-content img{margin:0;padding:0;border:0;max-width:100%!important;height:auto;box-shadow:0 20px 20px -10px rgba(0,0,0,.1)}sr-rd-mult{min-width:0;background-color:#fff;box-shadow:0 1px 6px rgba(32,33,36,.28);border-radius:8px}sr-rd-mult sr-rd-mult-avatar div{margin:0}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center-small{margin:7px 0!important}sr-rd-mult sr-rd-mult-avatar span{display:block}sr-rd-mult sr-rd-mult-content{padding-left:0}@media only screen and (max-device-width:1024px){.simpread-theme-root,html.simpread-theme-root{font-size:80%!important}sr-rd-mult sr-rd-mult-avatar img{width:50px;height:50px;min-width:50px;min-height:50px}toc-bg toc{width:10px!important}toc-bg:hover toc{width:auto!important}}@media only screen and (max-device-width:414px){.simpread-theme-root,html.simpread-theme-root{font-size:70%!important}sr-rd-mult sr-rd-mult-avatar img{width:30px;height:30px;min-width:30px;min-height:30px}}@media only screen and (max-device-width:320px){.simpread-theme-root,html.simpread-theme-root{font-size:90%!important}sr-rd-content p{margin-bottom:.5em}}}</style>
+                        <style type="text/css">undefinedsr-rd-content *, sr-rd-content p, sr-rd-content div {}sr-rd-content pre code, sr-rd-content pre code * {}sr-rd-desc {}sr-rd-content pre {}sr-rd-title {}</style>
+                        <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+.MathJax_Preview .MJXf-math {color: inherit!important}
+.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MathJax_Display {text-align: center; margin: 0; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.5') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+@font-face {font-family: MathJax_AMS; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff?V=2.7.5') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf?V=2.7.5') format('opentype')}
+</style>
+                        <style type="text/css">:root{--sr-annote-color-0:#b4d9fb;--sr-annote-color-1:#ffeb3b;--sr-annote-color-2:#a2e9f2;--sr-annote-color-3:#a1e0ff;--sr-annote-color-4:#a8ea68;--sr-annote-color-5:#ffb7da}[sr-annote-bg-color]{color:inherit}[sr-annote-bg-color][data-color-type="0"]{background-color:var(--sr-annote-color-0)}[sr-annote-bg-color][data-color-type="1"]{background-color:var(--sr-annote-color-1)}[sr-annote-bg-color][data-color-type="2"]{background-color:var(--sr-annote-color-2)}[sr-annote-bg-color][data-color-type="3"]{background-color:var(--sr-annote-color-3)}[sr-annote-bg-color][data-color-type="4"]{background-color:var(--sr-annote-color-4)}[sr-annote-bg-color][data-color-type="5"]{background-color:var(--sr-annote-color-5)}[sr-annote-bb-color][data-color-type="1"]{border-bottom-color:var(--sr-annote-color-1)}[sr-annote-bb-color][data-color-type="2"]{border-bottom-color:var(--sr-annote-color-2)}[sr-annote-bb-color][data-color-type="3"]{border-bottom-color:var(--sr-annote-color-3)}[sr-annote-bb-color][data-color-type="4"]{border-bottom-color:var(--sr-annote-color-4)}[sr-annote-bb-color][data-color-type="5"]{border-bottom-color:var(--sr-annote-color-5)}[sr-annote-bl-color][data-color-type="1"]{border-left:5px solid var(--sr-annote-color-1)}[sr-annote-bl-color][data-color-type="2"]{border-left:5px solid var(--sr-annote-color-2)}[sr-annote-bl-color][data-color-type="3"]{border-left:5px solid var(--sr-annote-color-3)}[sr-annote-bl-color][data-color-type="4"]{border-left:5px solid var(--sr-annote-color-4)}[sr-annote-bl-color][data-color-type="5"]{border-left:5px solid var(--sr-annote-color-5)}[data-color-style="1"]{background-color:transparent!important;background-repeat:no-repeat;background-size:100% 100%}[data-color-style="1"][data-color-type="1"]{background-color:transparent!important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAaCAMAAAB//6mtAAAAPFBMVEVHcEz/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zv/6zsmGdgxAAAAE3RSTlMAJJGnQ3Bh/ANS6An0u9o1FMp/ufrp4AAAAgZJREFUSMe1Vou2oyAM5BEIbxD+/183gFq99bZ7dnVOe6oWZwgJGRj7DcaY+et5BqtVFcA4eLraoLUFgJJLHzvBvuM00nPIzA4qazXkDuKka0VPIHNeiuee/RXO+qaAFjGFlpQQMi7JORcQ24Z+hRhcWpYYo5SikiQpkuBnldLXQwm5hANT53pxz9v1eZIdpEFCsmpLgXF+tVKGg640ZZrmDxacaNcIzqVE3EIoC7yYnjHuLxQ45cvquDP/RvgRiG4R2uYewlXKvXbo2r8x71NyFI4EZmZaj2vEShFJpnYHQopSAT/lgHEhZY2L+1/yVzAooJyyoEGEgLeEMFWC4K9NwHiVuFXlPSLNWbZ2g/61IuKN9AMyrwEUK5a7yQlLnUnwyr1v1luKCZsaq69kwwcCaC3ZWUZZPsFOkxaUA2pt8pHZE6KyhmnXbi3O1/xDSLkXqM8QH1FYwI+26nV1TwTQljy3ma8inSLYWiN+bp74ZX16hc4mnWkb7P0Jv9FejEB8+wsXlTfvLGIbthVvFN3jAbR0l34WUodzw6avJtIp1M6vya61EuTB1EqT3JW5jYfXiWw6Y626eOP7p5Th4FbrfqiZR4PxBjq5rv/BD8jplR12bcYBw44k4KCVtR9Q/Kszni/2W+MLh66n4WjLwz0LX5vqtDnqH4nitD8M/P10ZQ44q634A66hf2zVV84fAAAAAElFTkSuQmCC)}[data-color-style="1"][data-color-type="2"]{background-color:transparent!important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAaCAMAAAB//6mtAAAANlBMVEVHcEyA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3uqA3urNaunbAAAAEXRSTlMAe+8uaFLb/AQCG0ANkralydBaCTIAAAIBSURBVEjHtVaJduMwCJRA6ED3///sIstn6qbd13hy+NlxRjBYDEp9h+B9WI6JMRIZnSnEyKQPGKKIjOwnwoD6CXLPuHmeeI5RkREi+dKEEeMKuRKFnJPAq98gvKyf0ORiXbc619KaBXDy7r2Pzwq5Ym0TlFqz5BMROb1fxi96CGeDlcPNz855wji1NddaSpOFcl5kMxHvFvEoKtdi4WDbONbjLdxMokgKelWMGZP/olpgGrKWGfA7yrdw0EQpRMlh1Py1CMnYDv/P7MZri8lJQiXTRnnmV4lzG2X9C9bMQVTTkf2FH6voWJvtf8Whb76Um41GDeD6J+BG9Ttk3B8irziXz5AftbFmrcI4JMrNfXqFGnd5su2fZR8omnhJQMOlNp+Ekaap0NT+CHu3cT5GWPsT/M6Np0haW30ketlu1VBQBvpD+gAAygZWjFgeWaFQSmMbJKPhiQL0FtWyzbzO9ss+d66/dQHnfrAJ+U0rv1qNdOn93ndi3dI692Jy86o1cWt0Sb/0QCh5uHw0ptp+xyktfwXAfRitac17l1hQYbbAYpBng+JYzxHZ4SQ1C0zyczwIw8GJ5siRx2ywNWNopPzJymaps4ljJghjIvKKlr0nBlXEcLXYLX8/nYR9lBJDphEvnWaZZQwKjNvZDE6hUFfCqyvNAevis/7A+s+rFf8Do0ByAiavdJkAAAAASUVORK5CYII=)}[data-color-style="1"][data-color-type="3"]{background-color:transparent!important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAaCAMAAAB//6mtAAAANlBMVEVHcEyF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0faF0fYOABKzAAAAEXRSTlMA3e8uaFJ7/AQCGz8Nt5KlzvXM15AAAAIFSURBVEjHtVaNesIgDARCCA0/gfd/2YXSWuvUbd/sfWqlpQdcIBdjXmGJcVmvmSEh+lBxSYkxHPCICRg4TiwD5idon9F5NiKnZNArkf4EhARpg95JSs5ZEc1vsDyMn8HXYqnbUKWUZp0j/fTex3eD3rG2tVaKSNX1JADO74eJqx7K2dzGQSdKbR8YTStVxgSabbWusvkEzwaJoCpLsY4mHU2unbK/AI1FjCUUCZtizJDjN9UWxiFrIdon2f8E2jUrqhSArmHE/HHXZG+7+yPzvW5zCGtLxT2u9/wmc20jrP/CDJnKVkLieOIHERlR6P8FTZ31Xz2Fm32A4Bz1T2AopnpXuG2iaLiWz5Afalm/RWFcMtZGnx5B0k2e2vqH6RUlIK8LCG6Pzcfhdfsb8NIvYe8W5zYC6VfwE41dpKlNLpm9HjfxuBjv+kX6OOdAD7BhgHLJCAVzHscg++CuCEBvyazHLIZqnyTH/tYFiH6wCX0WTNysRrP0re87sZ7SEj2Y3ETzaU90ORw5cAan1OHyyXux/RmnpvwNzj2fRmsh8C1LrJB1M6kj+cQzQTHKQUxKpjleqsLnOMuDZTg44iw5qtYGWhrMN1xDE+/qiRnqqtx5q4iiwfXskZt+q3bLr6uTm3ENQ8YxX7yrZdYyaGHYW3NyJim1IJxdaRZYp2InHtjePFvxF2YVcjg/uCn9AAAAAElFTkSuQmCC)}[data-color-style="1"][data-color-type="4"]{background-color:transparent!important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAaCAMAAAB//6mtAAAAMFBMVEWM2EJHcEyM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKM2EKKz/w5AAAAEHRSTlP/AANRaHvzGy3WqT4Nk77kx+qVTgAAAb9JREFUSMe1VtlyxDAIwwYDvv//b4udY5Nus9NOE71kJocA4SDAXcEb5rWIZiQKFX3OguEFQswqKv6FNxr4iXd/0UvOzsgRRwTUrHmF3clGLsXg3QfAifjwoCjV1hl6qCm12HkAvoF7jzG21lKqVk9WlfK5gkUP42wb2RvpGTHVkYBl0GqdslHW8kMAr0jBMj3y8W9CjCJmCWFVTFTLQQvYxMaB9Lu0r6NxW5Qq+xmBozzUocM/YQWliltfj012RWpsEe4Ax2aSiT/2wKk1y7rQ4T5Uk+pVgVDQwHwbO3fgqnuTvZPa4FbYP0R+CTC0Knh3AEPKawVCNcL9aAFlBPCB4SkQmPpK6SH6jmVKpE8FGKfIRttT9JwIPdBj+jN3dR6cTb8GT0RpOLwIXKHQH6kgZjeHnQ/v/wDf8R8Htww7rxT/wMhXN88PIuWyGk4J3w9vqsPlM1GKVyN/Qe98Na1DkNXRhCbSTILtZC1j3MYHpuMnnc3dzYBrpc0R/XDw6YRjqalzNdheR+d3y5yvW6urcZd9I8I9meG3ZrdyvZ3sT4pYxJEv7rsMrItQ0X17WT7Jw5VQT7Tvy5U/4RRsxRfv9RDt9/UjOgAAAABJRU5ErkJggg==)}[data-color-style="1"][data-color-type="5"]{background-color:transparent!important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAaCAMAAAB//6mtAAAAOVBMVEVHcEz/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r/t9r20adnAAAAEnRSTlMAVQ062Hwb/ARpK/Olk7XoScQnLSnCAAAB6ElEQVRIx7VW2Y7DIAzkMBCDOf//Y9cQmiZt2q12m1EegoTGF/ZYiFdYGONHWV+kRBOL0NryzwQalEV76+1yh/gAu4uLLVoURMkG0EivvZ6QsnRyqxgfse48XqE0xgSuZRMpVcg5MFw7wIUMALXWRBRnPOoXK5wPLZmz5snh5nfj3KGfgSJR6h7UGEfipNZnRhZf0FCCcOTaKNs53AiCQ0hkypox6716rgUnmwspU2d6y/geIdQeApsQzxVfhEJo+S/Mu5SFnCFFeSvrkd9G6GX9JzpBgJpMsccQPBEZqtD+bWHLb9yVexEWjTdPL/HvRkJuIfp7Ewgb03fI77nKeGvY3lgyVvdtC6RnABYjtO+ydyQj7QgAw6E23wT2/Hikdgl7g6LmC21X8DvXXxGPNrrEe263hNzSPf/X5CeEPNqA53O6xEKSalRAoclXFIArPLvMRDgZju+e7UFyXl1oRixTanhKb3ffJeuU1rlHkVsfKG6DTpmHGZhTl1cWICRoZ5xdiAdYqM/dgGqM3abEAIVV/xLqOcZtoTtxgBwAEkUG3hRx6QrO68VYOSLvBnzJTRekeNAzLnVkbnVbMIQcvedYn7restzaD7aTxVotu79lv8uMPUj57bDOV82qRNIfaM+Wq+WXresHSSV3cD8ocu8AAAAASUVORK5CYII=)}[data-color-style="2"]{background-color:transparent!important}[data-color-style="2"][data-color-type="1"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 50%,var(--sr-annote-color-1) 0)}[data-color-style="2"][data-color-type="2"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 50%,var(--sr-annote-color-2) 0)}[data-color-style="2"][data-color-type="3"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 50%,var(--sr-annote-color-3) 0)}[data-color-style="2"][data-color-type="4"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 50%,var(--sr-annote-color-4) 0)}[data-color-style="2"][data-color-type="5"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 50%,var(--sr-annote-color-5) 0)}[data-color-style="3"]{position:relative;background-color:transparent!important}[data-color-style="3"]:after{content:"";position:absolute;left:0;bottom:25px;height:8px;width:58px;border-radius:4px;opacity:.8;transition:all .3s}[data-color-style="3"][data-color-type="1"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 85%,var(--sr-annote-color-1) 0)}[data-color-style="3"][data-color-type="2"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 85%,var(--sr-annote-color-2) 0)}[data-color-style="3"][data-color-type="3"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 85%,var(--sr-annote-color-3) 0)}[data-color-style="3"][data-color-type="4"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 85%,var(--sr-annote-color-4) 0)}[data-color-style="3"][data-color-type="5"]{background-color:transparent!important;background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 85%,var(--sr-annote-color-5) 0)}sr-annote-note{position:relative;bottom:-5px;padding:0 4px;color:#fff;background-color:#333;font-weight:700;font-style:normal;font-family:arial,helvetica,clean,sans-serif;border-radius:5px;opacity:.8;cursor:pointer}sr-annote-note:after{content:"N"}pre.sr-annote+sr-annote-note{bottom:25px;right:25px}sr-annote-note:hover{opacity:1}sr-annote-note sr-annote-note-tip{position:absolute;left:0;top:0;padding:.5em 1em;max-width:400px;color:#fff;background:#101010;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-weight:400;font-style:normal;text-shadow:none;font-size:12px;text-indent:0;white-space:pre;z-index:10;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.3);opacity:0;overflow:auto;pointer-events:none;z-index:20000;transition:all .18s ease-out .18s}sr-annote-note:hover sr-annote-note-tip{opacity:1;pointer-events:auto}sr-annote-note sr-annote-note-tip{overflow:hidden}sr-annote-note sr-annote-note-tip:hover{overflow:overlay}sr-annote-note sr-annote-note-tip::-webkit-scrollbar-track{background-color:transparent}sr-annote-note sr-annote-note-tip::-webkit-scrollbar{width:12px}sr-annote-note sr-annote-note-tip::-webkit-scrollbar-thumb{background-clip:padding-box;padding-top:80px;background-color:#ddd;border:3px solid transparent;border-radius:8px}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">.MJX_Assistive_MathML{display: none}</style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {
+        font-size: 15px;
+    }
+
+    .annote-perview, .annote-perview * {
+        color: rgb(85, 85, 85);
+        font-weight: 400;
+        line-height: 1.8;
+    }</style>
+                        
+                        
+                        <script>setTimeout(()=>{const e=location.hash.replace("#id=","");let t,a=!1;const n=t=>{for(let n of t){let t;if((t=e.length>6?n.getAttribute("data-id"):n.getAttribute("data-idx"))==e){n.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"}),a=!0;break}}};e&&(0==(t=document.getElementsByClassName("sr-unread-card")).length&&(t=document.getElementsByTagName("sr-annote")),n(t),a||n(t=document.getElementsByClassName("sr-annote")))},500);</script>
+                        
+                        <title>简悦 | Comparing Stata and Ipython Commands for OLS Models | Rob Hicks</title>
+                    </head>
+                    <body>
+                        <sr-read style='font-family: "Fira Code";'>
+                            <sr-rd-title>Comparing Stata and Ipython Commands for OLS Models | Rob Hicks</sr-rd-title>
+                    
+                    <sr-rd-content><header><h1 class="p-name entry-title" itemprop="headline name" id="sr-toc-0"><a href="#" class="u-url">Comparing Stata and Ipython Commands for OLS Models</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2015-03-02T07:15:41-05:00" itemprop="datePublished" title="2015-03-02 07:15">2015-03-02 07:15</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="comparing-stata-and-ipython-commands-for-ols-models.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    <style>sr-annote {all: unset;} </style><style>sr-annote { all: unset; } </style></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this note, I'll explore the Ipython <code>statsmodels</code> package for estimating linear regression models (OLS). The goal is to completely map stata commands for <code>reg</code> into something implementable in Ipython.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>#load python libraries for this ipython notebook:
+%matplotlib inline
+import pandas as pd             # pandas data manipulation library
+import statsmodels.formula.api as smf    # for the ols and robust ols model
+import statsmodels.api as sm
+import numpy as np
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note this is from the Tobias and Koop dataset on the returns to education.  The full dataset is a panel.  I have turned this into a cross section where <code>time==4</code> (for demonstration purposes only).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre># load data and create dataframe
+tobias_koop=pd.read_csv('http://rlhick.people.wm.edu/econ407/data/tobias_koop_t_4.csv')
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With the pandas data frame created, we can easily run some models.  First let's look at the data, run summary statistics, and plot the histogram of our dependent variable, <code>ln_wage</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>tobias_koop.head()
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>id</th>
+      <th>educ</th>
+      <th>ln_wage</th>
+      <th>pexp</th>
+      <th>time</th>
+      <th>ability</th>
+      <th>meduc</th>
+      <th>feduc</th>
+      <th>broken_home</th>
+      <th>siblings</th>
+      <th>pexp2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>  4</td>
+      <td> 12</td>
+      <td> 2.14</td>
+      <td> 2</td>
+      <td> 4</td>
+      <td> 0.26</td>
+      <td> 12</td>
+      <td> 10</td>
+      <td> 1</td>
+      <td> 4</td>
+      <td>  4</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>  6</td>
+      <td> 15</td>
+      <td> 1.91</td>
+      <td> 4</td>
+      <td> 4</td>
+      <td> 0.44</td>
+      <td> 12</td>
+      <td> 16</td>
+      <td> 0</td>
+      <td> 2</td>
+      <td> 16</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>  8</td>
+      <td> 13</td>
+      <td> 2.32</td>
+      <td> 8</td>
+      <td> 4</td>
+      <td> 0.51</td>
+      <td> 12</td>
+      <td> 15</td>
+      <td> 1</td>
+      <td> 2</td>
+      <td> 64</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td> 11</td>
+      <td> 14</td>
+      <td> 1.64</td>
+      <td> 1</td>
+      <td> 4</td>
+      <td> 1.82</td>
+      <td> 16</td>
+      <td> 17</td>
+      <td> 1</td>
+      <td> 2</td>
+      <td>  1</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td> 12</td>
+      <td> 13</td>
+      <td> 2.16</td>
+      <td> 6</td>
+      <td> 4</td>
+      <td>-1.30</td>
+      <td> 13</td>
+      <td> 12</td>
+      <td> 0</td>
+      <td> 5</td>
+      <td> 36</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>tobias_koop.describe()
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>id</th>
+      <th>educ</th>
+      <th>ln_wage</th>
+      <th>pexp</th>
+      <th>time</th>
+      <th>ability</th>
+      <th>meduc</th>
+      <th>feduc</th>
+      <th>broken_home</th>
+      <th>siblings</th>
+      <th>pexp2</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>count</th>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+      <td> 1034.000000</td>
+    </tr>
+<tr>
+<th>mean</th>
+      <td> 1090.951644</td>
+      <td>   12.274662</td>
+      <td>    2.138259</td>
+      <td>    4.815280</td>
+      <td>    4</td>
+      <td>    0.016596</td>
+      <td>   11.403288</td>
+      <td>   11.585106</td>
+      <td>    0.169246</td>
+      <td>    3.200193</td>
+      <td>   27.979691</td>
+    </tr>
+<tr>
+<th>std</th>
+      <td>  634.891728</td>
+      <td>    1.566838</td>
+      <td>    0.466280</td>
+      <td>    2.190298</td>
+      <td>    0</td>
+      <td>    0.920963</td>
+      <td>    3.027277</td>
+      <td>    3.735833</td>
+      <td>    0.375150</td>
+      <td>    2.126575</td>
+      <td>   22.598790</td>
+    </tr>
+<tr>
+<th>min</th>
+      <td>    4.000000</td>
+      <td>    9.000000</td>
+      <td>    0.420000</td>
+      <td>    0.000000</td>
+      <td>    4</td>
+      <td>   -3.140000</td>
+      <td>    0.000000</td>
+      <td>    0.000000</td>
+      <td>    0.000000</td>
+      <td>    0.000000</td>
+      <td>    0.000000</td>
+    </tr>
+<tr>
+<th>25%</th>
+      <td>  537.250000</td>
+      <td>   12.000000</td>
+      <td>    1.820000</td>
+      <td>    3.000000</td>
+      <td>    4</td>
+      <td>   -0.550000</td>
+      <td>   11.000000</td>
+      <td>   10.000000</td>
+      <td>    0.000000</td>
+      <td>    2.000000</td>
+      <td>    9.000000</td>
+    </tr>
+<tr>
+<th>50%</th>
+      <td> 1081.500000</td>
+      <td>   12.000000</td>
+      <td>    2.120000</td>
+      <td>    5.000000</td>
+      <td>    4</td>
+      <td>    0.170000</td>
+      <td>   12.000000</td>
+      <td>   12.000000</td>
+      <td>    0.000000</td>
+      <td>    3.000000</td>
+      <td>   25.000000</td>
+    </tr>
+<tr>
+<th>75%</th>
+      <td> 1666.500000</td>
+      <td>   13.000000</td>
+      <td>    2.450000</td>
+      <td>    6.000000</td>
+      <td>    4</td>
+      <td>    0.720000</td>
+      <td>   12.000000</td>
+      <td>   14.000000</td>
+      <td>    0.000000</td>
+      <td>    4.000000</td>
+      <td>   36.000000</td>
+    </tr>
+<tr>
+<th>max</th>
+      <td> 2177.000000</td>
+      <td>   19.000000</td>
+      <td>    3.590000</td>
+      <td>   12.000000</td>
+      <td>    4</td>
+      <td>    1.890000</td>
+      <td>   20.000000</td>
+      <td>   20.000000</td>
+      <td>    1.000000</td>
+      <td>   15.000000</td>
+      <td>  144.000000</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>tobias_koop.ln_wage.plot(kind='hist')
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes.AxesSubplot at 0x41dcb50&gt;
+</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<div class="sr-rd-content-center"><img class="" src="data:image/png;base64,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" sr-org-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAEACAYAAABGYoqtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz%0AAAALEgAACxIB0t1+/AAAGaJJREFUeJzt3X+wZGV95/H3hQk/3MxwmVGIwyoXhhBTxnitRKO4iRdM%0AlYlbwWg01m52N3e1Ym0tUQaDG5NQcUNSKSIUQV3Nmrg60UTRMiwlyIplmJNgZLIj6yWaYnfFMLA1%0AI8siwowLxJ0w+8dzLtP03L736b79nOd877xfVV1zz+nT/Xzm6R9Pn+d7TjdIkiRJkiRJkiRJkiRJ%0AkiRJas0AtwOHgIeA97brtgC3AI+31585cJvLgG8B+4HXdRlWktS9eeBk4PuAO4GfAa4EPgrMAu8G%0APthuuwM4AHw/8DLgm8CpHeeVJFVwBrAHeCmwBPxwu34r8GD792XAtQO3+QzwT7sKKEk61gkdtHEY%0AeIC0J7EHOAu4r73uYeCk9rIduH/gdve220qSKulikNgEzAE/CvzsiG1mOsghSRrTpo7auR+4gTRQ%0A7CcNGncB24DvAn/frj974DbnArcO39H27duPHDhwoHBcSdpwvgGcN+6NSu5JbAdeApxCCvbzwH8j%0A1RouJ9Uj3gnc2G5/M/BG4HzgAuDFwG3Dd3rgwAGOHDnS+8u73vWu6hk2Ss4IGc1pzr5fSAcHja3k%0AnsSpwPuB55MOa/0j0t7EF4DrSUcy7QXe0G5/D3ANqW7xBHBJ+29I+/btqx0hS4ScETKCOafNnP1Q%0AcpD4BmlvYNhB4NUjbnMtTz/CSZJUUReF6+PS4uJi7QhZIuSMkBHMOW3m7IeIRxUdaefXJEmZZmZm%0AYIL3fPckCmmapnaELBFyRsgI5pw2c/aDg4QkaSSnmyTpOOB0kyRp6hwkCokyTxkhZ4SMYM5pM2c/%0AOEhIkkayJiFJxwFrEpKkqXOQKCTKPGWEnBEygjmnzZz94CAhSRrJmoQkHQesSUiSps5BopAo85QR%0AckbICOacNnP2g4OEJGkkaxKSdBywJiFJmjoHiUKizFNGyBkhI5hz2szZDw4SkqSRrElI0nHAmoQk%0AaeocJAqJMk8ZIed6M27ZspWZmZlOLlu2bJ3Of7qgCI85mLMvHCS04R069G3gSAeX3W1b0sZhTUIb%0AXpqL7eo5M4PPT/XRpDWJTdOPIh3PNi2/GIvavPl0Dh58uHg7ktNNhUSZp4yQM0LGpAEO08XU1nqm%0AtaL0pzn7wUFCkjRSyf3i7cAfAj8OfAf4PeC9wDXA2we2ez1wQ/v3ZcAVwBPAWwfWD7ImobF0XZPo%0Api1rHxrPpDWJkoPEOcBLgM8BzwFuAy4EFoGvAB8f2n4HcDvwCuCZpAHiXODxoe0cJDQWBwmpnyfT%0A3Qt8EngU+BqwBJzZXrdS0IuB64GvA3cAe4GLCuYrKso8ZYScETImTe0AWaL0pzn7oauaxA5gDvhS%0Au/wB4CBwI/Csdt124P6B29wLnNVRPknSCro4T2Ib8HngUuCLpGmoh4ATgXcDJ5GmoK4G9gPXtbd7%0AD/C3pLrGIKebNBanm6T+niexBbgZuJI0QEDaQ1j2PuCj7d/7gbMHrjsXuHWlO11cXGRubg6A2dlZ%0A5ufnWVhYAI7u+rns8uDyUcvLC4WWl9eVuv/l5XapJ/3rcv+Wm6Zh165dAE+9X/bNqcBfAG8aWv8T%0AwGnA6aS9hI+0688DDgDnAxcADwCnrHC/RyLYvXt37QhZIuRcb0bgCBzp4LK7w7Ymfx1EeMyPHDHn%0AtDHhLm7JmsTLSYe/fgh4sr38AvBLwH3A3wFbgXe0299DOjx2D/Bp4BLSobCSpEr87iZteNYkpH4e%0AAitJCs5BopBjC6b9FCFnhIxJUztAlij9ac5+cJCQJI1kTUIbnjUJyZqEJKkAB4lCosxTRsgZIWPS%0A1A6QJUp/mrMfHCQkSSNZk9CGZ01CsiYhSSrAQaKQKPOUEXJGyJg0tQNkidKf5uwHBwlJ0kjWJLTh%0AWZOQrElIkgpwkCgkyjxlhJwRMiZN7QBZovSnOfvBQUKSNJI1CW141iQkaxKSpAIcJAqJMk8ZIWeE%0AjElTO0CWKP1pzn5wkJAkjWRNQhueNQnJmoQkqQAHiUKizFNGyBkhY9LUDpAlSn+asx8cJCRJI1mT%0A0IZnTUKyJiFJKsBBopAo85QRckbImDS1A2SJ0p/m7AcHCUnSSNYktOFZk5CsSUiSCig5SGwHbgYe%0ABfYDb2vXbwFuAR4HbgfOHLjNZcC32u1fVzBbcVHmKSPkjJAxaWoHyBKlP83ZDyUHiZOBjwHPBV4F%0AXAE8H7gceAh4NnAHcGW7/Q7gHcBLgdcD7wdOLZhPkrSGLmsSnweuAq4F/hXwN8BW4L8DZ5D2Ip4D%0AvL3d/jPAB4HPDt2PNQmNxZqE1P+axA7gbNKew1nAfe36h4GT2st24P6B29zbbitJqmRTB21sAz4F%0AvJlUh1jJWKPb4uIic3NzAMzOzjI/P8/CwgJwdH6w9vLyur7kGbV83XXX9bL/BpeXlpbYuXPnuu7v%0AqOXlhQLLzcC6Evc/uNwuVerPLpaHX0u184xa7mt/Nk3Drl27AJ56v+yjLaS9h9cMrFsCXtj+vQ14%0AsP17J/D7A9vdBLx6hfs8EsHu3btrR8gSIed6MwJH4EgHl90dtjX56yDCY37kiDmnjQnnQUvWJE4F%0APgf8MfDhgfVXAucAlwK/BpwGvAU4D/hL0kemZwI3AHPAE0P32/5/pTzWJKR+1iReDvw48CHgyfby%0Az4FrSHsQB0hHMv1mu/097XV7gE8Dl3DsACFJ6lDJQeIL7f0PXj4OHCRNI51CGkQeGLjNtaQjnrYD%0Af1YwW3HHzoX3U4ScETImTe0AWaL0pzn7wTOuJUkj+d1N2vCsSUj9rElIkoJzkCgkyjxlhJwRMiZN%0A7QBZovSnOfuhi5PpJE3dpuXpg+I2bz6dgwcf7qQt9Y81CW14G7Um0eX/yddcfNYkJElT5yBRSJR5%0Aygg5I2RMmtoBMjW1A2SJ8rhHyTkpBwlJ0kjWJLThWZNYf1u+5uKzJiFJmjoHiUKizFNGyBkhY9LU%0ADpCpqR0gS5THPUrOSTlISJJGsiahDc+axPrb8jUXnzUJSdLUOUgUEmWeMkLOCBmTpnaATE3tAFmi%0APO5Rck4qZ5B4DvAJ4O52eQFYLJRHktQjOfNTu4EPAJ8kDSr/mPRR5LxysVZlTUJjsSax/rZ8zcU3%0AaU0i5waHSL9J/QRpkHgG8CDwveM2NiUOEhqLg8T62/I1F1/JwvXfAD88sPyLwJfHbeh4E2WeMkLO%0ACBmTpnaATE3tAFmiPO5Rck4q5/ck/g3wwfbvvyWNRD9XLJEkqTdydz1mgOeS9jz20d1+7kqcbtJY%0AnG5af1u+5uIrOd00C/wu8B+Be4GXAK8etyFJUjw5g8QfAw8Br2qXvwX8XrFEG0SUecoIOSNkTJra%0AATI1tQNkifK4R8k5qZxB4kLgfQPL+4Fzy8SRJPVJzvzUXcDPk06mOwF4LfDrwIsL5lqNNQmNxZrE%0A+tvyNRffpDWJnKOb3gZ8rP37s8CLgNeP25AkKZ61pptOAM4CXglcBFwNPA/4UuFc4UWZp4yQM0LG%0ApKkdIFNTO0CWKI97lJyTWmuQeBL4D8A/kJ5ZDXBwjPv/BOns7K8OrLumvd/ly+sGrruMVBjfP7Re%0AklRBzvzUO4BnA78PPDqwPmewuAB4HPgo8IJ23dXAV4CPD227A7gdeAXwTOAGUoH88aHtrEloLNYk%0A1t+Wr7n4StYk3kx6Nv700PofzLjtl1j5iwBXCnoxcD3w9faylzTF9dmMdiRJBeQcAvs80oAwfFmP%0AD5D2RG4EntWu2w7cP7DNvaR6SEhR5ikj5IyQMWlqB8jU1A6QJcrjHiXnpHL2JF7Dsfu1B4GvkU6y%0AG9cHgCuBE4F3k6afFse5g8XFRebm5gCYnZ1lfn6ehYUF4OgDVnt5WV/yjFpeWlrqVZ6VlpeWlqb2%0AeBx9g1wotLy8rtT9Ly+zxvWrLS9N3F4fng99W57G87PEctM07Nq1C+Cp98tJ5MxP/SnpbOv/0m7/%0AKuCvgB8BfoNUb1jNDtIewwtWuO4F7e1fBOwEziYVrwFuAv4AuGXoNtYkNBZrEutvy9dcfCW/u+m5%0AwE8C/xL4F+3f20h7GL+dk21o+SeA04DTgbeSPtYA3Ay8ETifVPB+MXBbxv1LkgrJGSR+CPjmwPID%0ApD2Ar5GOQlrNF4H/CTyfdLjrpcAvAfcBfwdsJR09BXAP6fDYPcCngUtIP3QUUpR5ygg5I2RMmtoB%0AMjW1A2SJ8rhHyTmpnJrER0hTPh8i7RX863bdOaz9Sf+fjJnn2vYiSeqB3PmpnwJe3v79V8DnysTJ%0AYk1CY7Emsf62fM3FV/I8CUg/NDRLOo9hK6me8O1xG5MkxZJTk7iU9INDf9ouvxD4k2KJNogo85QR%0AckbImDS1A2RqagfIEuVxj5JzUjl7Eu8kDQwPtMt/zfi1BklSQDnzU98EfgB4hLTnsYP0UeQ55WKt%0AypqExmJNYv1t+ZqLr+R5Ev8JuKr9+w3Ap4APjtuQJCmenEHiCtL5DjcDryady/A7JUNtBFHmKSPk%0AjJAxaWoHyNTUDpAlyuMeJeekVqtJzJC+duOtpCObIE053VM6lCSpH1abn7oUeAvp5Lkvt+t+BPgw%0A6cS695SNNpI1CY3FmsT62/I1F9+kNYnVbvBV0l5EM7T+FaRfq1vpC/u64CChsThIrL8tX3PxlShc%0An0f64Z9hd7LyDwlpQJR5ygg5I2RMmtoBMjW1A2SJ8rhHyTmp1QaJk4H/u8L677TXSZI2uNV2PZ4E%0A/n7EdSeTd2RUCU43aSxON62/LV9z8ZX47qaTJk4jSdoQVtsbOLzGRauIMk9ZM+eWLVuZmZkpfulO%0A02Fb69HUDpDF11A/1Joykjh06NukKZO1Lrsztxt1kTSpLj9mTYs1iQ2iu1qBNYn1tuVrLr6S390k%0ASTpOOUgUEmWeMkbOpnaATE3tAJma2gGyxHhuxsk5KQcJSdJI1iRUjTWJCO0AfA9dHNC4efPpHDz4%0AcPF2jlclvruprxwkNggHiQjtdNmWBfKSLFz3TJR5yhg5m9oBMjW1A2RqagfIEuO5GSfnpBwkJEkj%0AOd2kapxuitBOl2053VSS002SpKlzkCgkyjxljJxN7QCZmtoBMjW1A2SJ8dyMk3NSDhKSpJFK1yQ+%0AAbwS+N8c/bnTLcD1wIWk385+fXs9wGXAFcATpJ9OvWGF+7QmsUFYk4jQTpdtWZMoqa81ifcBrxpa%0AdznwEPBs4A7gynb9DuAdwEtJA8f7gVML55MkraL0IPEl4NDQuouBa4BHgKuA1w6svx74Omnw2Atc%0AVDhfMVHmKWPkbGoHyNTUDpCpqR0gS4znZpyck6pRkzgLuK/9+2HSL+CdBGwH7h/Y7t52W0lSJav9%0AfGmXxponW1xcZG5uDoDZ2Vnm5+dZWFgAjo7qLuctL6+r137T/rvWMmtcX/r2OcuD60rc/+Aya1w/%0A7duvt7285cHnx8LCQvXXR+7ysr7kWe67Xbt2ATz1fjmJLk6m2wHcyNHC9RLwi8BdwDbgbuAMYCdw%0ANql4DXAT8AfALUP3Z+F6g7BwHaGdLtuycF1SXwvXcGyoz5CK11uBd5IGEICbgTcC5wMXAC8Gbusg%0AXxFR5ilj5GxqB8jU1A6QqakdIEuM52acnJMqPd30RdIbPsCTpL2Fa0gF6gOk4vQb2uvvaa/bQzoE%0A9pL2X0lSJX53k6pxuilCO1225XRTSX2ebpIkBeUgUUiUecoYOZvaATI1tQNkamoHyBLjuRkn56Qc%0AJCRJI1mTUDXWJCK002Vb1iRKsiYhSZo6B4lCosxTxsjZ1A6QqakdIFNTO0CWGM/NODkn5SAhSRrJ%0AmoSqsSYRoZ0u27ImUZI1CUnS1DlIFBJlnjJGzqZ2gExN7QCZmtoBssR4bsbJOSkHCUnSSNYkVI01%0AiQjtdNmWNYmSrElIkqbOQaKQKPOUMXI2tQNkamoHyNTUDpAlxnMzTs5JOUhIkkayJqFqrElEaKfL%0AtqxJlGRNQpI0dQ4ShUSZp4yRs6kdIFNTO0CmpnaALDGem3FyTspBQpI0kjUJVWNNIkI7XbZlTaIk%0AaxKSpKlzkCgkyjxljJxN7QCZmtoBMjW1A2SJ8dyMk3NSDhKSpJGsSagaaxIR2umyLWsSJVmTkCRN%0AnYNEIVHmKWPkbGoHyNTUDpCpqR0gS4znZpyck3KQkCSNZE1C1ViTiNBOl21ZkygpYk3iIeDJ9nKw%0AXbcFuAV4HLgdOLNONEkS1B0k/l/b/gmkwQHgctLg8WzgDuDKOtHWL8o8ZYycTe0AmZraATI1tQNk%0AifHcjJNzUn2rSVwMXAM8AlwFvLZuHEk6vtWsSTwInAR8B3gPcDXwf4DzgEfbbR4BnkXa61hmTWKD%0AsCYRoZ0u27ImUdKkNYlN04+S7RXAPcAPADcCe0dsF7G4LkkbQs1B4u7236+RBokXAvuBOeAuYBvw%0A3fbyNIuLi8zNzQEwOzvL/Pw8CwsLwNH5wdrLy+v6kmfU8nXXXVe1/47Oj6+2vATsHGP7lZZZ4/pp%0ALDcD60rc/+Aya1y/2vIk/bme9vKXB58fw6+l4ev7sry0tMTOnTt7k2d5uWkadu3aBfDU++Ukan1K%0AP4NUnP4fwPcD/xl4M/BK4BzgUuDXgNOAtwzdNsR0U9M0A2+E/VUzZ/50U8PRN5WJWspsZ70a4MKO%0A2lrP/6lhvP6sM93ka2i6Jp1uqjVInA/8Gan+8CCpJnEt6Sin64GLSNNPbwAeGLptiEFCa7MmEaGd%0ALtuyJlFStEFiPRwkNggHiQjtdNmWg0RJEU+m29CiHDsdI2dTO0CmpnaATE3tAFliPDfj5JyUg4Qk%0AaSSnm1SN000R2umyLaebSnK6SZI0dQ4ShUSZp4yRs6kdIFNTO0CmpnaALDGem3FyTspBQpI0kjUJ%0AVWNNIkI7XbZlTaKkiN/dJEkDNi2/kRW3efPpHDz4cCdtRed0UyFR5ilj5GxqB8jU1A6QqakdYITD%0ApD2W5cvuoeXpXQ4d+vbUUsd4DU3OQUKSNJI1CVVjTSJCO1221e3/6Xh7H/E8CUnS1DlIFBJlnjJG%0AzqZ2gExN7QCZmtoBMjW1A2SJ8RqanIOEJGkkaxKqxppEhHa6bMuaREnWJCRJU+cgUUiUecoYOZva%0AATI1tQNkamoHyNTUDpAlxmtocg4SkqSRrEmoGmsSEdrpsi1rEiX53U2aii1btk71KwskxeZ0UyFR%0A5imHc6YBosz35Rx7yU45/n+siqZ2gExN7QCZmtoBskR5rU/KQUKSNJI1CT1Nd3UC2Khz3f6f+t5O%0Aaut4ex/xPAlJ0tQ5SBQSZZ4yRs6mdoBMTe0AmZraATI1tQNkifEampxHNwXhUUeSarAmMaG9e/fy%0AW791LV1E2bz5FD75yV1sxHlh/099b6fLtqxJlOR5Eh3bs2cPt976MIcPLxZv66ST/m3xNqTjSze/%0Ap70Rfku7j4PEhcCHgW3Ae4Er6sYZ7cQTz+fw4X824toGWJhKO5s2Xc53v/vIVO7rWA3TyllOQ/8z%0AQpQ59Fj9uVDovpd/T3saGkblPHQo4mTN0/WtcD1DGiDeBjwP+DngZVUTTWypdoBMEXJGyAjmnDZz%0A9kHfBol54BHgJuAA8EfA66ommlipT/7TFiFnhIxgzmkzZx/0bZA4C7hvYPnedp0kqYI+1iQG9XZC%0A74QTTmBm5ia2bNm34vWPPfYVnvGMO6fS1mOPfWsq97OyfQXve1r21Q6QaV/tAJn21Q6QaV/tAJn2%0A1Q5QVN/ehOeBjwAvapd/BTgT+HcD29wD7Og4lyRF9w3gvNoh1usE0hTTxaRppruBC6omkiT1ykWk%0AgeIQ8LuVs0iSJEmK5kLSHsVB4HdWuP57gI8CjwF3kc6rqGGtnL8MPDlweXt30Z7yCeBB4Ksjru9L%0AX66Vsw99uR24GXgU2E86p2dYH/ozJ2cf+nMGuJ00c/AQ6QTa4VppH/ozJ2cf+hPStP0eUt5hfejL%0AqZghvfH+DOnJfjfHnlT3JuALwFbgrcCtXQZs5eS8BPj1jnMNu4B0MMCoN98+9CWsnbMPfXkO8Ebg%0ANOCHSIPa84e26UN/5uTsQ39COmDlZOD7gDtJr6dBfehPWDtnX/rzl0kDwV+ucF1f+nLdXgR8ZWD5%0A7cDVQ9vcSCpwA5xIGt3/UfloT5OT8xLgNzpLNNp5jH7z7UNfLlstZ1/6ctDnSXuTg/rUn8tWytm3%0A/jyD9An4x4bW960/R+XsQ39uB/6c9GF1pT2JsfuybyfTLcs5qW5wm38g7VJvLx9tZAYYffLfrwLf%0AAW6jn4eg9aEvc/WpL3cAc8AdQ+v71p+jckJ/+vMw8ADpE/pfD13Xp/5cLSfU789r2wxPjrh+7L7s%0A6yAxrG/nc4yyUs4bSbv+ZwJ/AXyo00QbS5/6chvwKdLu+xMVc6xltZx96s9NpIHsR4HXVMyxltVy%0A1u7PnyJ9R8iXifOeObF5nj6N8yvAu4e2uZGjD1KtXdCcnIM2A7V+OWgHq0831e7LZavlHFSzL7eQ%0APpWPejPrS3+ulXNQzf4c9KscewBIX/pz0Eo5B9Xoz9/m6YXzJ4H/OrRNH/tyIjkn1b2JNPe2jXTk%0Axue7DNjKyfkyUsbvBf49sLvDfINWm+vvQ18uWy1nH/ryVNKnxDetsk0f+jMnZx/6czvwEuAU0mN/%0AJ8d+qWcf+jMnZx/6c9mPsXJNog99OTUrnVR3NWkEh7Tb9zHqH8o1KufyV4lcRRqtD5EekHO7Dgh8%0Akad/uriUfvblWjn70Jc/ybGf1n6B/vVnTs4+9OcOYC+pr/4X8Jvt+r7152o5+/RaX/ZSjh7d1Le+%0AlCRJkiRJkiRJkiRJkiRJkiRJkiSpX/4/VF4hAvS1S6IAAAAASUVORK5CYII="></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="OLS-analysis-1">OLS analysis<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#OLS-analysis">¶</a>
+</h2>
+<p>This is the model we'll be estimating the vector <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>&amp;#x03B2;</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.703em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.595em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.511em, 1000.6em, 2.751em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">\beta</script> from</p>
+<span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>&amp;#x03B2;</mi><mn>0</mn></msub><mo>+</mo><msub><mi>&amp;#x03B2;</mi><mn>1</mn></msub><mi>e</mi><mi>d</mi><mi>u</mi><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><msub><mi>&amp;#x03B2;</mi><mn>2</mn></msub><mi>p</mi><mi>e</mi><mi>x</mi><msub><mi>p</mi><mi>i</mi></msub><mo>+</mo><msub><mi>&amp;#x03B2;</mi><mn>3</mn></msub><mi>p</mi><mi>e</mi><mi>x</mi><msubsup><mi>p</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><msub><mi>&amp;#x03B2;</mi><mn>4</mn></msub><mi>b</mi><mi>r</mi><mi>o</mi><mi>k</mi><mi>e</mi><mi>n</mi><mi mathvariant=&quot;normal&quot;>&amp;#x005F;</mi><mi>h</mi><mi>o</mi><mi>m</mi><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>&amp;#x03F5;</mi><mi>i</mi></msub></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 31.468em; display: inline-block;"><span style="display: inline-block; position: relative; width: 27.104em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.404em, 1027.1em, 2.858em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="msubsup" id="MathJax-Span-6"><span style="display: inline-block; position: relative; width: 0.811em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.49em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-7" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.488em;"><span class="mi" id="MathJax-Span-8" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-9" style="font-family: MathJax_Main; padding-left: 0.272em;">=</span><span class="msubsup" id="MathJax-Span-10" style="padding-left: 0.272em;"><span style="display: inline-block; position: relative; width: 0.973em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.6em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-11" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.595em;"><span class="mn" id="MathJax-Span-12" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.218em;">+</span><span class="msubsup" id="MathJax-Span-14" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 0.973em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.6em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-15" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.595em;"><span class="mn" id="MathJax-Span-16" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-17" style="font-family: MathJax_Math-italic;">e</span><span class="mi" id="MathJax-Span-18" style="font-family: MathJax_Math-italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-19" style="font-family: MathJax_Math-italic;">u</span><span class="msubsup" id="MathJax-Span-20"><span style="display: inline-block; position: relative; width: 0.757em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.43em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-21" style="font-family: MathJax_Math-italic;">c</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.434em;"><span class="mi" id="MathJax-Span-22" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-23" style="font-family: MathJax_Main; padding-left: 0.218em;">+</span><span class="msubsup" id="MathJax-Span-24" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 0.973em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.6em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-25" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.595em;"><span class="mn" id="MathJax-Span-26" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-27" style="font-family: MathJax_Math-italic;">p</span><span class="mi" id="MathJax-Span-28" style="font-family: MathJax_Math-italic;">e</span><span class="mi" id="MathJax-Span-29" style="font-family: MathJax_Math-italic;">x</span><span class="msubsup" id="MathJax-Span-30"><span style="display: inline-block; position: relative; width: 0.811em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.49em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-31" style="font-family: MathJax_Math-italic;">p</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.488em;"><span class="mi" id="MathJax-Span-32" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main; padding-left: 0.218em;">+</span><span class="msubsup" id="MathJax-Span-34" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 0.973em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.6em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-35" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.595em;"><span class="mn" id="MathJax-Span-36" style="font-size: 70.7%; font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-37" style="font-family: MathJax_Math-italic;">p</span><span class="mi" id="MathJax-Span-38" style="font-family: MathJax_Math-italic;">e</span><span class="mi" id="MathJax-Span-39" style="font-family: MathJax_Math-italic;">x</span><span class="msubsup" id="MathJax-Span-40"><span style="display: inline-block; position: relative; width: 0.919em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.49em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-41" style="font-family: MathJax_Math-italic;">p</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; clip: rect(3.343em, 1000.43em, 4.151em, -999.997em); top: -4.308em; left: 0.488em;"><span class="mn" id="MathJax-Span-42" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; clip: rect(3.343em, 1000.33em, 4.151em, -999.997em); top: -3.661em; left: 0.488em;"><span class="mi" id="MathJax-Span-43" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-44" style="font-family: MathJax_Main; padding-left: 0.218em;">+</span><span class="msubsup" id="MathJax-Span-45" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 0.973em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1000.6em, 4.367em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-46" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.595em;"><span class="mn" id="MathJax-Span-47" style="font-size: 70.7%; font-family: MathJax_Main;">4</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-48" style="font-family: MathJax_Math-italic;">b</span><span class="mi" id="MathJax-Span-49" style="font-family: MathJax_Math-italic;">r</span><span class="mi" id="MathJax-Span-50" style="font-family: MathJax_Math-italic;">o</span><span class="mi" id="MathJax-Span-51" style="font-family: MathJax_Math-italic;">k</span><span class="mi" id="MathJax-Span-52" style="font-family: MathJax_Math-italic;">e</span><span class="mi" id="MathJax-Span-53" style="font-family: MathJax_Math-italic;">n</span><span class="mi" id="MathJax-Span-54" style="font-family: MathJax_Main;">_</span><span class="mi" id="MathJax-Span-55" style="font-family: MathJax_Math-italic;">h</span><span class="mi" id="MathJax-Span-56" style="font-family: MathJax_Math-italic;">o</span><span class="mi" id="MathJax-Span-57" style="font-family: MathJax_Math-italic;">m</span><span class="msubsup" id="MathJax-Span-58"><span style="display: inline-block; position: relative; width: 0.811em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.43em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-59" style="font-family: MathJax_Math-italic;">e</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.488em;"><span class="mi" id="MathJax-Span-60" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-61" style="font-family: MathJax_Main; padding-left: 0.218em;">+</span><span class="msubsup" id="MathJax-Span-62" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 0.703em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.38em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-63" style="font-family: MathJax_Math-italic;">ϵ</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.434em;"><span class="mi" id="MathJax-Span-64" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.441em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>e</mi><mi>d</mi><mi>u</mi><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>p</mi><mi>e</mi><mi>x</mi><msub><mi>p</mi><mi>i</mi></msub><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>p</mi><mi>e</mi><mi>x</mi><msubsup><mi>p</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>b</mi><mi>r</mi><mi>o</mi><mi>k</mi><mi>e</mi><mi>n</mi><mi mathvariant="normal">_</mi><mi>h</mi><mi>o</mi><mi>m</mi><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϵ</mi><mi>i</mi></msub></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">
+y_i = \beta_0 + \beta_1 educ_i + \beta_2 pexp_i + \beta_3 pexp^2_i + \beta_4 broken\_home_i + \epsilon_i
+</script><p>For now, we will ignore any potential bias due to endogeneity, although we'll come back to that in a later post.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fitting-the-model-in-stata-2">Fitting the model in stata<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-in-stata">¶</a>
+</h3>
+<p>Here is the code for estimating the model in stata:</p>
+
+<pre>. reg ln_wage educ pexp pexp2 broken_home
+
+      Source |       SS       df       MS              Number of obs =    1034
+-------------+------------------------------           F(  4,  1029) =   51.36
+       Model |  37.3778146     4  9.34445366           Prob &gt; F      =  0.0000
+    Residual |   187.21445  1029  .181938241           R-squared     =  0.1664
+-------------+------------------------------           Adj R-squared =  0.1632
+       Total |  224.592265  1033  .217417488           Root MSE      =  .42654
+
+------------------------------------------------------------------------------
+     ln_wage |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0852725   .0092897     9.18   0.000     .0670437    .1035014
+        pexp |   .2035214   .0235859     8.63   0.000     .1572395    .2498033
+       pexp2 |  -.0124126   .0022825    -5.44   0.000    -.0168916   -.0079336
+ broken_home |  -.0087254   .0357107    -0.24   0.807    -.0787995    .0613488
+       _cons |   .4603326    .137294     3.35   0.001     .1909243    .7297408
+------------------------------------------------------------------------------
+</pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fitting-the-model-Ipython-with-statsmodels-3">Fitting the model Ipython with statsmodels<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-Ipython-with-statsmodels">¶</a>
+</h3>
+<p>We will estimate the same models as above using statsmodels.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>formula = "ln_wage ~ educ + pexp + pexp2 + broken_home"
+results = smf.ols(formula,tobias_koop).fit()
+print(results.summary())
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                ln_wage   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.163
+Method:                 Least Squares   F-statistic:                     51.36
+Date:                Thu, 05 Mar 2015   Prob (F-statistic):           1.83e-39
+Time:                        09:18:38   Log-Likelihood:                -583.66
+No. Observations:                1034   AIC:                             1177.
+Df Residuals:                    1029   BIC:                             1202.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+===============================================================================
+                  coef    std err          t      P&gt;|t|      [95.0% Conf. Int.]
+-------------------------------------------------------------------------------
+Intercept       0.4603      0.137      3.353      0.001         0.191     0.730
+educ            0.0853      0.009      9.179      0.000         0.067     0.104
+pexp            0.2035      0.024      8.629      0.000         0.157     0.250
+pexp2          -0.0124      0.002     -5.438      0.000        -0.017    -0.008
+broken_home    -0.0087      0.036     -0.244      0.807        -0.079     0.061
+==============================================================================
+Omnibus:                       55.892   Durbin-Watson:                   1.761
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              112.050
+Skew:                          -0.355   Prob(JB):                     4.66e-25
+Kurtosis:                       4.448   Cond. No.                         391.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="OLS-Regression-with-robust-standard-errors-4">OLS Regression with robust standard errors<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#OLS-Regression-with-robust-standard-errors">¶</a>
+</h2>
+<p>Recall that for robust standard errors, we first recover our OLS estimates (<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi mathvariant=&quot;bold&quot;>b</mi></mrow></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-65" style="width: 0.757em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.649em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.511em, 1000.6em, 2.535em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-66"><span class="texatom" id="MathJax-Span-67"><span class="mrow" id="MathJax-Span-68"><span class="mi" id="MathJax-Span-69" style="font-family: MathJax_Main-bold;">b</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">b</mi></mrow></math></span></span><script type="math/tex" id="MathJax-Element-3">\mathbf{b}</script>) of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>&amp;#x03B2;</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-70" style="width: 0.703em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.595em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.511em, 1000.6em, 2.751em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-71"><span class="mi" id="MathJax-Span-72" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">\beta</script>.  Using <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi mathvariant=&quot;bold&quot;>b</mi></mrow></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-73" style="width: 0.757em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.649em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.511em, 1000.6em, 2.535em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-74"><span class="texatom" id="MathJax-Span-75"><span class="mrow" id="MathJax-Span-76"><span class="mi" id="MathJax-Span-77" style="font-family: MathJax_Main-bold;">b</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">b</mi></mrow></math></span></span><script type="math/tex" id="MathJax-Element-5">\mathbf{b}</script>, construct <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi mathvariant=&quot;bold&quot;>e</mi></mrow><mo>=</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi mathvariant=&quot;bold&quot;>y</mi><mo mathvariant=&quot;bold&quot;>&amp;#x2212;</mo><mi mathvariant=&quot;bold&quot;>x</mi><mi mathvariant=&quot;bold&quot;>b</mi></mrow></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-78" style="width: 5.876em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.067em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(1.511em, 1005.01em, 2.751em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-79"><span class="texatom" id="MathJax-Span-80"><span class="mrow" id="MathJax-Span-81"><span class="mi" id="MathJax-Span-82" style="font-family: MathJax_Main-bold;">e</span></span></span><span class="mo" id="MathJax-Span-83" style="font-family: MathJax_Main; padding-left: 0.272em;">=</span><span class="texatom" id="MathJax-Span-84" style="padding-left: 0.272em;"><span class="mrow" id="MathJax-Span-85"><span class="mi" id="MathJax-Span-86" style="font-family: MathJax_Main-bold;">y</span><span class="mo" id="MathJax-Span-87" style="font-family: MathJax_Main-bold; padding-left: 0.218em;">−</span><span class="mi" id="MathJax-Span-88" style="font-family: MathJax_Main-bold; padding-left: 0.218em;">x</span><span class="mi" id="MathJax-Span-89" style="font-family: MathJax_Main-bold;">b</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">e</mi></mrow><mo>=</mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">y</mi><mo mathvariant="bold">−</mo><mi mathvariant="bold">x</mi><mi mathvariant="bold">b</mi></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">\mathbf{e} = \mathbf{y - xb}</script>.  From there, calculate the robust variance/covariance matrix of estimated parameters as
+<span class="MathJax_Preview" style="color: inherit;"></span></p><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;><mi>V</mi><mi>a</mi><mi>r</mi><mo stretchy=&quot;false&quot;>(</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi mathvariant=&quot;bold&quot;>b</mi></mrow><msub><mo stretchy=&quot;false&quot;>)</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi>r</mi><mi>o</mi><mi>b</mi><mi>u</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>=</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>(</mo><msup><mi mathvariant=&quot;bold&quot;>x</mi><mo>&amp;#x2032;</mo></msup><mi mathvariant=&quot;bold&quot;>x</mi><msup><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>)</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo mathvariant=&quot;bold&quot;>&amp;#x2212;</mo><mn mathvariant=&quot;bold&quot;>1</mn></mrow></msup><msup><mi mathvariant=&quot;bold&quot;>x</mi><mo>&amp;#x2032;</mo></msup><mi mathvariant=&quot;bold&quot;>d</mi><mi mathvariant=&quot;bold&quot;>i</mi><mi mathvariant=&quot;bold&quot;>a</mi><mi mathvariant=&quot;bold&quot;>g</mi><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>(</mo><mi mathvariant=&quot;bold&quot;>e</mi><msup><mi mathvariant=&quot;bold&quot;>e</mi><mo>&amp;#x2032;</mo></msup><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>)</mo><mi mathvariant=&quot;bold&quot;>x</mi><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>(</mo><msup><mi mathvariant=&quot;bold&quot;>x</mi><mo>&amp;#x2032;</mo></msup><mi mathvariant=&quot;bold&quot;>x</mi><msup><mo mathvariant=&quot;bold&quot; stretchy=&quot;false&quot;>)</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo mathvariant=&quot;bold&quot;>&amp;#x2212;</mo><mn mathvariant=&quot;bold&quot;>1</mn></mrow></msup></mrow><mo>&amp;#x00D7;</mo><mfrac><mi>N</mi><mrow><mi>N</mi><mo>&amp;#x2212;</mo><mi>K</mi></mrow></mfrac></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-90" style="width: 27.697em; display: inline-block;"><span style="display: inline-block; position: relative; width: 23.871em; height: 0px; font-size: 116%;"><span style="position: absolute; clip: rect(0.865em, 1023.87em, 3.289em, -999.997em); top: -2.368em; left: 0em;"><span class="mrow" id="MathJax-Span-91"><span class="mi" id="MathJax-Span-92" style="font-family: MathJax_Math-italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.164em;"></span></span><span class="mi" id="MathJax-Span-93" style="font-family: MathJax_Math-italic;">a</span><span class="mi" id="MathJax-Span-94" style="font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-95" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-96"><span class="mrow" id="MathJax-Span-97"><span class="mi" id="MathJax-Span-98" style="font-family: MathJax_Main-bold;">b</span></span></span><span class="msubsup" id="MathJax-Span-99"><span style="display: inline-block; position: relative; width: 2.427em; height: 0px;"><span style="position: absolute; clip: rect(3.074em, 1000.27em, 4.421em, -999.997em); top: -3.984em; left: 0em;"><span class="mo" id="MathJax-Span-100" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -3.823em; left: 0.38em;"><span class="texatom" id="MathJax-Span-101"><span class="mrow" id="MathJax-Span-102"><span class="mi" id="MathJax-Span-103" style="font-size: 70.7%; font-family: MathJax_Math-italic;">r</span><span class="mi" id="MathJax-Span-104" style="font-size: 70.7%; font-family: MathJax_Math-italic;">o</span><span class="mi" id="MathJax-Span-105" style="font-size: 70.7%; font-family: MathJax_Math-italic;">b</span><span class="mi" id="MathJax-Span-106" style="font-size: 70.7%; font-family: MathJax_Math-italic;">u</span><span class="mi" id="MathJax-Span-107" style="font-size: 70.7%; font-family: MathJax_Math-italic;">s</span><span class="mi" id="MathJax-Span-108" style="font-size: 70.7%; font-family: MathJax_Math-italic;">t</span></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-109" style="font-family: MathJax_Main; padding-left: 0.272em;">=</span><span class="texatom" id="MathJax-Span-110" style="padding-left: 0.272em;"><span class="mrow" id="MathJax-Span-111"><span class="mo" id="MathJax-Span-112" style="font-family: MathJax_Main-bold;">(</span><span class="msup" id="MathJax-Span-113"><span style="display: inline-block; position: relative; width: 0.865em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.6em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-114" style="font-family: MathJax_Main-bold;">x</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.595em;"><span class="mo" id="MathJax-Span-115" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-116" style="font-family: MathJax_Main-bold;">x</span><span class="msubsup" id="MathJax-Span-117"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.074em, 1000.33em, 4.421em, -999.997em); top: -3.984em; left: 0em;"><span class="mo" id="MathJax-Span-118" style="font-family: MathJax_Main-bold;">)</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.434em;"><span class="texatom" id="MathJax-Span-119"><span class="mrow" id="MathJax-Span-120"><span class="mo" id="MathJax-Span-121" style="font-size: 70.7%; font-family: MathJax_Main-bold;">−</span><span class="mn" id="MathJax-Span-122" style="font-size: 70.7%; font-family: MathJax_Main-bold;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="msup" id="MathJax-Span-123"><span style="display: inline-block; position: relative; width: 0.865em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.6em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-124" style="font-family: MathJax_Main-bold;">x</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.595em;"><span class="mo" id="MathJax-Span-125" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-126" style="font-family: MathJax_Main-bold;">d</span><span class="mi" id="MathJax-Span-127" style="font-family: MathJax_Main-bold;">i</span><span class="mi" id="MathJax-Span-128" style="font-family: MathJax_Main-bold;">a</span><span class="mi" id="MathJax-Span-129" style="font-family: MathJax_Main-bold;">g</span><span class="mo" id="MathJax-Span-130" style="font-family: MathJax_Main-bold;">(</span><span class="mi" id="MathJax-Span-131" style="font-family: MathJax_Main-bold;">e</span><span class="msup" id="MathJax-Span-132"><span style="display: inline-block; position: relative; width: 0.811em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.49em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-133" style="font-family: MathJax_Main-bold;">e</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.541em;"><span class="mo" id="MathJax-Span-134" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mo" id="MathJax-Span-135" style="font-family: MathJax_Main-bold;">)</span><span class="mi" id="MathJax-Span-136" style="font-family: MathJax_Main-bold;">x</span><span class="mo" id="MathJax-Span-137" style="font-family: MathJax_Main-bold;">(</span><span class="msup" id="MathJax-Span-138"><span style="display: inline-block; position: relative; width: 0.865em; height: 0px;"><span style="position: absolute; clip: rect(3.397em, 1000.6em, 4.151em, -999.997em); top: -3.984em; left: 0em;"><span class="mi" id="MathJax-Span-139" style="font-family: MathJax_Main-bold;">x</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.595em;"><span class="mo" id="MathJax-Span-140" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span><span class="mi" id="MathJax-Span-141" style="font-family: MathJax_Main-bold;">x</span><span class="msubsup" id="MathJax-Span-142"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.074em, 1000.33em, 4.421em, -999.997em); top: -3.984em; left: 0em;"><span class="mo" id="MathJax-Span-143" style="font-family: MathJax_Main-bold;">)</span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; top: -4.415em; left: 0.434em;"><span class="texatom" id="MathJax-Span-144"><span class="mrow" id="MathJax-Span-145"><span class="mo" id="MathJax-Span-146" style="font-size: 70.7%; font-family: MathJax_Main-bold;">−</span><span class="mn" id="MathJax-Span-147" style="font-size: 70.7%; font-family: MathJax_Main-bold;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-148" style="font-family: MathJax_Main; padding-left: 0.218em;">×</span><span class="mfrac" id="MathJax-Span-149" style="padding-left: 0.218em;"><span style="display: inline-block; position: relative; width: 3.128em; height: 0px; margin-right: 0.11em; margin-left: 0.11em;"><span style="position: absolute; clip: rect(3.128em, 1000.87em, 4.151em, -999.997em); top: -4.685em; left: 50%; margin-left: -0.428em;"><span class="mi" id="MathJax-Span-150" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.11em;"></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; clip: rect(3.128em, 1003.02em, 4.259em, -999.997em); top: -3.284em; left: 50%; margin-left: -1.506em;"><span class="mrow" id="MathJax-Span-151"><span class="mi" id="MathJax-Span-152" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.11em;"></span></span><span class="mo" id="MathJax-Span-153" style="font-family: MathJax_Main; padding-left: 0.218em;">−</span><span class="mi" id="MathJax-Span-154" style="font-family: MathJax_Math-italic; padding-left: 0.218em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.99em;"></span></span><span style="position: absolute; clip: rect(0.865em, 1003.13em, 1.242em, -999.997em); top: -1.29em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 3.128em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.08em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.373em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.934em; border-left: 0px solid; width: 0px; height: 2.566em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>V</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">b</mi></mrow><msub><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mi>r</mi><mi>o</mi><mi>b</mi><mi>u</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>=</mo><mrow class="MJX-TeXAtom-ORD"><mo mathvariant="bold" stretchy="false">(</mo><msup><mi mathvariant="bold">x</mi><mo>′</mo></msup><mi mathvariant="bold">x</mi><msup><mo mathvariant="bold" stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo mathvariant="bold">−</mo><mn mathvariant="bold">1</mn></mrow></msup><msup><mi mathvariant="bold">x</mi><mo>′</mo></msup><mi mathvariant="bold">d</mi><mi mathvariant="bold">i</mi><mi mathvariant="bold">a</mi><mi mathvariant="bold">g</mi><mo mathvariant="bold" stretchy="false">(</mo><mi mathvariant="bold">e</mi><msup><mi mathvariant="bold">e</mi><mo>′</mo></msup><mo mathvariant="bold" stretchy="false">)</mo><mi mathvariant="bold">x</mi><mo mathvariant="bold" stretchy="false">(</mo><msup><mi mathvariant="bold">x</mi><mo>′</mo></msup><mi mathvariant="bold">x</mi><msup><mo mathvariant="bold" stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo mathvariant="bold">−</mo><mn mathvariant="bold">1</mn></mrow></msup></mrow><mo>×</mo><mfrac><mi>N</mi><mrow><mi>N</mi><mo>−</mo><mi>K</mi></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-7">
+Var(\mathbf{b})_{robust} = \mathbf{(x'x)^{-1}x'diag(ee')x(x'x)^{-1}}\times \frac{N}{N-K}
+</script>
+for calculating standard errors.<p></p>
+<h3 id="Fitting-the-model-in-stata-5">Fitting the model in stata<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-in-stata">¶</a>
+</h3>
+<p>In stata, we would run this:</p>
+
+<pre>. reg ln_wage educ pexp pexp2 broken_home, robust
+
+Linear regression                                      Number of obs =    1034
+                                                       F(  4,  1029) =   64.82
+                                                       Prob &gt; F      =  0.0000
+                                                       R-squared     =  0.1664
+                                                       Root MSE      =  .42654
+
+------------------------------------------------------------------------------
+             |               Robust
+     ln_wage |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0852725   .0099294     8.59   0.000     .0657882    .1047568
+        pexp |   .2035214   .0226835     8.97   0.000     .1590101    .2480326
+       pexp2 |  -.0124126   .0022447    -5.53   0.000    -.0168173   -.0080079
+ broken_home |  -.0087254   .0312381    -0.28   0.780     -.070023    .0525723
+       _cons |   .4603326   .1315416     3.50   0.000     .2022121     .718453
+------------------------------------------------------------------------------
+</pre>
+<h3 id="Fitting-the-model-in-Ipython-6">Fitting the model in Ipython<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-in-Ipython">¶</a>
+</h3>
+<p>In Ipython, we don't need to rerun the model.  The default OLS command already includes a number of different types of robust standard errors (one of which using the method outlined above).  All we need to do is create a new results instance that calls the covariance type we want:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>results_robust = results.get_robustcov_results(cov_type='HC1')
+print(results_robust.summary())
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                ln_wage   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.163
+Method:                 Least Squares   F-statistic:                     64.82
+Date:                Thu, 05 Mar 2015   Prob (F-statistic):           6.41e-49
+Time:                        09:18:39   Log-Likelihood:                -583.66
+No. Observations:                1034   AIC:                             1177.
+Df Residuals:                    1029   BIC:                             1202.
+Df Model:                           4                                         
+Covariance Type:                  HC1                                         
+===============================================================================
+                  coef    std err          t      P&gt;|t|      [95.0% Conf. Int.]
+-------------------------------------------------------------------------------
+Intercept       0.4603      0.132      3.500      0.000         0.202     0.718
+educ            0.0853      0.010      8.588      0.000         0.066     0.105
+pexp            0.2035      0.023      8.972      0.000         0.159     0.248
+pexp2          -0.0124      0.002     -5.530      0.000        -0.017    -0.008
+broken_home    -0.0087      0.031     -0.279      0.780        -0.070     0.053
+==============================================================================
+Omnibus:                       55.892   Durbin-Watson:                   1.761
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              112.050
+Skew:                          -0.355   Prob(JB):                     4.66e-25
+Kurtosis:                       4.448   Cond. No.                         391.
+==============================================================================
+
+Warnings:
+[1] Standard Errors are heteroscedasticity robust (HC1)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bootstrapped-standard-errors-7">Bootstrapped standard errors<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Bootstrapped-standard-errors">¶</a>
+</h2>
+<h3 id="Fitting-the-model-in-stata-8">Fitting the model in stata<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-in-stata">¶</a>
+</h3>
+<p>If instead, we want to bootstrap our standard errors, in stata we would do this:</p>
+
+<pre>. bstrap:  reg ln_wage educ pexp pexp2 broken_home
+(running regress on estimation sample)
+
+Bootstrap replications (50)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+..................................................    50
+
+Linear regression                               Number of obs      =      1034
+                                                Replications       =        50
+                                                Wald chi2(4)       =    290.46
+                                                Prob &gt; chi2        =    0.0000
+                                                R-squared          =    0.1664
+                                                Adj R-squared      =    0.1632
+                                                Root MSE           =    0.4265
+
+------------------------------------------------------------------------------
+             |   Observed   Bootstrap                         Normal-based
+     ln_wage |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0852725    .010622     8.03   0.000     .0644539    .1060912
+        pexp |   .2035214   .0217148     9.37   0.000     .1609611    .2460816
+       pexp2 |  -.0124126   .0021076    -5.89   0.000    -.0165433   -.0082818
+ broken_home |  -.0087254   .0330727    -0.26   0.792    -.0735466    .0560958
+       _cons |   .4603326   .1405716     3.27   0.001     .1848173    .7358479
+------------------------------------------------------------------------------
+</pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is important to note that the above set of results implicitly assumes normality, since confidence intervals are symmetric about the mean (and since standard errors are reported).</p>
+<h3 id="Fitting-the-model-in-Ipython-9">Fitting the model in Ipython<a class="anchor-link" href="comparing-stata-and-ipython-commands-for-ols-models.html#Fitting-the-model-in-Ipython">¶</a>
+</h3>
+<p>This isn't as straightforward in Ipython.  We need to do a bit of wrangling to get the bootstrap working in Ipython.  Write our own routine.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>R = 50
+
+results_boot = np.zeros((R,results.params.shape[0]))
+
+row_id = range(0,tobias_koop.shape[0])
+
+for r in range(R):
+     this_sample = np.random.choice(row_id, size=tobias_koop.shape[0], replace=True) # gives sampled row numbers
+     # Define data for this replicate:    
+     tobias_koop_r = tobias_koop.iloc[this_sample]   
+     # Estimate model
+     results_r = smf.ols(formula,tobias_koop_r).fit(disp=0).params   
+     # Store in row r of results_boot:
+     results_boot[r,:] = np.asarray(results_r)   
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The array results_boot has all of our data.  Put in pandas dataframe and summarize:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre># Convert results to pandas dataframe for easier analysis:
+results_boot = pd.DataFrame(results_boot,columns=['b_Intercept','b_educ','b_pexp','pexp2','b_broken_home'])
+results_boot.describe(percentiles=[.025,.975])
+
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>b_Intercept</th>
+      <th>b_educ</th>
+      <th>b_pexp</th>
+      <th>pexp2</th>
+      <th>b_broken_home</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>count</th>
+      <td> 50.000000</td>
+      <td> 50.000000</td>
+      <td> 50.000000</td>
+      <td> 50.000000</td>
+      <td> 50.000000</td>
+    </tr>
+<tr>
+<th>mean</th>
+      <td>  0.462494</td>
+      <td>  0.084486</td>
+      <td>  0.208471</td>
+      <td> -0.012965</td>
+      <td> -0.017659</td>
+    </tr>
+<tr>
+<th>std</th>
+      <td>  0.160763</td>
+      <td>  0.011046</td>
+      <td>  0.024721</td>
+      <td>  0.002473</td>
+      <td>  0.036356</td>
+    </tr>
+<tr>
+<th>min</th>
+      <td>  0.004603</td>
+      <td>  0.056518</td>
+      <td>  0.148656</td>
+      <td> -0.019397</td>
+      <td> -0.102527</td>
+    </tr>
+<tr>
+<th>2.5%</th>
+      <td>  0.126781</td>
+      <td>  0.064798</td>
+      <td>  0.157471</td>
+      <td> -0.018137</td>
+      <td> -0.100246</td>
+    </tr>
+<tr>
+<th>50%</th>
+      <td>  0.462583</td>
+      <td>  0.084843</td>
+      <td>  0.209224</td>
+      <td> -0.013365</td>
+      <td> -0.010556</td>
+    </tr>
+<tr>
+<th>97.5%</th>
+      <td>  0.783207</td>
+      <td>  0.105074</td>
+      <td>  0.260848</td>
+      <td> -0.008159</td>
+      <td>  0.054402</td>
+    </tr>
+<tr>
+<th>max</th>
+      <td>  0.801684</td>
+      <td>  0.118317</td>
+      <td>  0.273543</td>
+      <td> -0.007170</td>
+      <td>  0.066333</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the above set of results, the standard deviation (<code>std</code>) can be interpreted as the parameter standard error if we are willing to impose normality.  Alternatively, we could construct 95% confidence intervals by looking at the 2.5% and 97.5% percentiles.</p>
+
+</div>
+</div>
+</div>
+    </div><p></p><aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/bootstrap.html" rel="tag">bootstrap</a></li>
+            <li><a class="tag p-category" href="../categories/econometrics.html" rel="tag">econometrics</a></li>
+            <li><a class="tag p-category" href="../categories/ipython.html" rel="tag">ipython</a></li>
+            <li><a class="tag p-category" href="../categories/stata.html" rel="tag">stata</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="running-r-and-matlab-commands-in-an-ipython-notebook.html" rel="prev" title="Running R and Matlab Commands in an Ipython Notebook">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="tapping-mysql-ipython.html" rel="next" title="Tapping MariaDB / MySQL data from Ipython">Next post</a>
+            </li>
+        </ul></nav></aside><script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></sr-rd-content>
+                            
+                            <sr-rd-footer>
+                                <sr-rd-footer-group>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                    <sr-rd-footer-text>全文完</sr-rd-footer-text>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                </sr-rd-footer-group>
+                                <sr-rd-footer-copywrite>
+                                    <div>本文由 <a href="http://ksria.com/simpread" target="_blank">简悦 SimpRead</a> 转码，用以提升阅读体验，<a href="https://rlhick.people.wm.edu/posts/comparing-stata-and-ipython-commands-for-ols-models.html" target="_blank">原文地址 </a></div>
+                                </sr-rd-footer-copywrite>
+                            </sr-rd-footer>
+                        </sr-read>
+                    </body>
+                </html>
