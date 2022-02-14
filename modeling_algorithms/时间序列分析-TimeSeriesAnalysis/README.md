@@ -4,6 +4,7 @@
 
 (备注: [pmdarima](http://alkaline-ml.com/pmdarima/quickstart.html) 里的`auto_arima`似乎是一个更方便的选择,安装`pmdarima`的时候直接用`pip`就好了,在按官网上说的`conda`三步曲导致环境检测一直有矛盾，还直接改你`conda`配置,导致安装其它库的时候也环境矛盾)
 
+`pmdarima-year.ipynb`里有`缺失值补全`
 
 ## Tips
 
